@@ -4,7 +4,7 @@
 
 For a fixed degree sequence and a given graph space, a configuration model is a uniform distribution of graphs with that degree sequence in that space. This code package implements Markov chain Monte Carlo methods to sample from configuration models, as discussed in the associated paper [1]. Given an input graph (and its implicit degree sequence), these methods can sample graphs from the configuration model on the space of (either stub or vertex-labeled): simple graphs, loopy graphs, multigraphs or loopy multigraphs. 
 
-[1] Bailey K. Fosdick, Daniel B. Larremore, Joel Nishimura, Johan Ugander. Configuring Random Graph Models with Fixed Degree Sequences (2016)
+[1] Bailey K. Fosdick, Daniel B. Larremore, Joel Nishimura, Johan Ugander (2016) Configuring Random Graph Models with Fixed Degree Sequences. https://arxiv.org/abs/1608.00607
 
 ## How to Cite
 
