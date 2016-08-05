@@ -1,7 +1,7 @@
-                Double Edge Swap MCMC Graph Sampler
+# Double Edge Swap MCMC Graph Sampler
 
 ## What is it?
-
+
 For a fixed degree sequence and a given graph space, a configuration model is a uniform distribution of graphs with that degree sequence in that space. This code package implements Markov chain Monte Carlo methods to sample from configuration models, as discussed in the associated paper [1]. Given an input graph (and its implicit degree sequence), these methods can sample graphs from the configuration model on the space of (either stub or vertex-labeled): simple graphs, loopy graphs, multigraphs or loopy multigraphs. 
 
 [1] Bailey K. Fosdick, Daniel B. Larremore, Joel Nishimura, Johan Ugander. Configuring Random Graph Models with Fixed Degree Sequences (2016)
@@ -12,16 +12,16 @@ If this code is utilized in work contributing to a academic publication please c
 
 ## Included
 
-  README.md
-  dbl_edge_doc.pdf
-  dbl_edge_worksheet.ipynb
-  dbl_edge_mcmc.py
-  dist_verification.py
-  sample_assortativity.py
-  geomnet_edgelist
-  /output
-  /verification
-  /html_doc
+-  README.md
+-  dbl_edge_doc.pdf
+-  dbl_edge_worksheet.ipynb
+-  dbl_edge_mcmc.py
+-  dist_verification.py
+-  sample_assortativity.py
+-  geomnet_edgelist
+-  /output
+-  /verification
+-  /html_doc
 
 ## Documentation
 
@@ -39,17 +39,17 @@ Simply import desired python modules into an instance of Python 2.7.x.
 
 ## History
 
- 8/1/2016  v.1 More documentation added.
- 7/29/2016 v.1 Additional documentation added.
- 7/23/2016 v.1 iPython worksheet added.
+-  8/1/2016  v.1 More documentation added.
+-  7/29/2016 v.1 Additional documentation added.
+-  7/23/2016 v.1 iPython worksheet added.
 
 
 ## Authors
 
-Bailey K. Fosdick, Department of Statistics, Colorado State University, Ft. Collins, CO 80523 USA (bailey@stat.colostate.edu)
-Daniel B. Larremore, Santa Fe Institute, 1399 Hyde Park Rd. Sante Fe, NM, 87501 USA (larremore@santafe.edu)
-Joel Nishimura, School of Mathematical and Natural Sciences, Arizona State University, Glendale, AZ 85306 USA(joel.nishimura@asu.edu)
-Johan Ugander, Management Science & Engineering, Stanford University, Stanford, CA, 94305 USA (jugander@stanford.edu) 
+- Bailey K. Fosdick, Department of Statistics, Colorado State University, Ft. Collins, CO 80523 USA (bailey@stat.colostate.edu)
+- Daniel B. Larremore, Santa Fe Institute, 1399 Hyde Park Rd. Sante Fe, NM, 87501 USA (larremore@santafe.edu)
+- Joel Nishimura, School of Mathematical and Natural Sciences, Arizona State University, Glendale, AZ 85306 USA(joel.nishimura@asu.edu)
+- Johan Ugander, Management Science & Engineering, Stanford University, Stanford, CA, 94305 USA (jugander@stanford.edu) 
 
 
 ## Contact
