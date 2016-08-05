@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dist_verification &mdash; dbl_edge_mcmc .1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="dbl_edge_mcmc .1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for dist_verification</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Tue Jul 19 09:20:04 2016</span>
+
+<span class="sd">@author: Joel Nishimura</span>
+
+
+<span class="sd">This module contains functions to test the uniformity of the MCMC sampling</span>
+<span class="sd">in dbl_edge_mcmc.py.  </span>
+
+<span class="sd">Running this as a script performs a test on the path graph with degree sequence</span>
+<span class="sd">1,2,2,2,1. Output is saved to subdirectory &#39;verification&#39;.</span>
+
+<span class="sd">A more thorough, though time-consuming test, is available in the function </span>
+<span class="sd">&#39;test_sampling_seven_node&#39;. </span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__docformat__</span> <span class="o">=</span> <span class="s1">&#39;reStructuredText&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">scipy.misc</span> <span class="kn">as</span> <span class="nn">mis</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">dbl_edge_mcmc</span> <span class="kn">as</span> <span class="nn">mcmc</span>
+
+
+<div class="viewcode-block" id="determine_relative_freq"><a class="viewcode-back" href="../index.html#dist_verification.determine_relative_freq">[docs]</a><span class="k">def</span> <span class="nf">determine_relative_freq</span><span class="p">(</span><span class="n">G</span><span class="p">):</span>    
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Returns the ratio of stub-matchings for the input graph divided by the </span>
+<span class="sd">    number of stub-matchings for a simple graph with the same degree sequence. </span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     G (networkx_class): The input graph.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     The likelihood of the input graph relative to a simple graph with the </span>
+<span class="sd">        same degree sequence.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">multidigraph</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+    <span class="n">degs</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">()</span>
+    <span class="n">prob</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    
+    <span class="k">for</span> <span class="n">u</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes_iter</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">]:</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+                <span class="k">continue</span>
+            
+            <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">])</span>
+            
+            <span class="n">du</span> <span class="o">=</span> <span class="n">degs</span><span class="p">[</span><span class="n">u</span><span class="p">]</span>
+            
+            <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
+
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">mis</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">du</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="p">)</span>                
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                <span class="n">degs</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span>
+
+            <span class="k">elif</span> <span class="n">l</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+                <span class="n">degs</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        
+                <span class="n">dv</span> <span class="o">=</span> <span class="n">degs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+                <span class="n">degs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+                
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">du</span><span class="o">*</span><span class="n">dv</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">temp</span> <span class="o">=</span> <span class="n">mis</span><span class="o">.</span><span class="n">comb</span><span class="p">(</span><span class="n">du</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+                
+                <span class="n">degs</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="n">l</span>
+                
+                <span class="n">dv</span> <span class="o">=</span> <span class="n">degs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span>
+                <span class="n">degs</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="n">l</span>
+                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+                    <span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">*</span><span class="p">(</span><span class="n">dv</span><span class="o">-</span><span class="n">i</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">du</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">prob</span> <span class="o">=</span> <span class="n">prob</span><span class="o">*</span><span class="n">temp</span>
+            
+            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">))</span>
+            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">))</span>
+    
+    <span class="k">return</span> <span class="n">prob</span></div>
+
+
+<div class="viewcode-block" id="test_sampling"><a class="viewcode-back" href="../index.html#dist_verification.test_sampling">[docs]</a><span class="k">def</span> <span class="nf">test_sampling</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">self_loops</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">multi_edges</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">sample_uniformly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">its</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">):</span> 
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Tests the uniformity of the MCMC sampling on an input graph.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     G (networkx graph or multigraph): The starting point of the mcmc double</span>
+<span class="sd">            edges swap method.</span>
+<span class="sd">    |     self_loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     multi_edges (bool): True only if multiedges are allowed in the graph</span>
+<span class="sd">            space.</span>
+<span class="sd">    |     sample_uniformly (bool): True if the space is vertex labeled, False for</span>
+<span class="sd">            stub-labeled.</span>
+<span class="sd">    |     its (int): The number of samples from the MCMC sampler.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     dict: Keys correspond to each visited graph, with values being a list </span>
+<span class="sd">            giving the number of times the graph was sampled along with a </span>
+<span class="sd">            weight proportional to the expected number of samplings (relevant</span>
+<span class="sd">            for stub-labeled samplings) </span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>    
+    
+    <span class="k">print</span> <span class="s1">&#39;Testing sampling with selfloops= &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">self_loops</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39; multi_edges= &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">multi_edges</span><span class="p">)</span> 
+    
+    <span class="n">config</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_class</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">self_loops</span><span class="p">,</span><span class="n">multi_edges</span><span class="p">,</span> <span class="n">sample_uniformly</span><span class="p">)</span>
+    <span class="n">visited_graphs</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">its</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">visited_graphs</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())][</span><span class="mi">0</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+
+        <span class="k">except</span><span class="p">:</span>
+            <span class="n">visited_graphs</span><span class="p">[</span><span class="nb">tuple</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span>  <span class="n">determine_relative_freq</span><span class="p">(</span><span class="n">config</span><span class="o">.</span><span class="n">G</span><span class="p">)</span>  <span class="p">]</span>      
+    
+        <span class="n">config</span><span class="o">.</span><span class="n">get_graph</span><span class="p">()</span>
+              
+    <span class="k">print</span> <span class="s1">&#39;number of graphs visited: &#39;</span> <span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">visited_graphs</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">visited_graphs</span></div>
+
+<div class="viewcode-block" id="plot_vals"><a class="viewcode-back" href="../index.html#dist_verification.plot_vals">[docs]</a><span class="k">def</span> <span class="nf">plot_vals</span><span class="p">(</span><span class="n">samples</span><span class="p">,</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Plots the output of test_sampling as a histogram of the number of times </span>
+<span class="sd">    each graph was visited in the MCMC process. Creates a figure in </span>
+<span class="sd">    subdirectory &#39;verification/&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     samples (dict): Output from test_sampling. Has a length 2 list as </span>
+<span class="sd">            values corresponding to [num_samples,sampling_weight].</span>
+<span class="sd">    |     uniform (bool): True if the space is vertex labeled, False for</span>
+<span class="sd">            stub-labeled.</span>
+<span class="sd">    |     name (str): Name for output.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     None</span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>   
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span> 
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">samples</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+    <span class="n">samples</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">uniform</span><span class="p">:</span>
+        <span class="n">samples</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+        
+    <span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+    <span class="n">num_samples</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">num_graphs</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_graphs</span><span class="p">),</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;graphs&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;samples&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">uniform</span><span class="p">:</span>
+        <span class="n">average_samples</span> <span class="o">=</span> <span class="n">num_samples</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">num_graphs</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">num_graphs</span><span class="p">],</span><span class="mi">2</span><span class="o">*</span><span class="p">[</span><span class="n">average_samples</span><span class="p">],</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;expected&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tot_weight</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+        
+        <span class="n">weights</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">samples</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]:</span>
+            <span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">tot_weight</span><span class="p">))</span><span class="o">*</span><span class="n">num_samples</span><span class="p">)</span>
+            <span class="n">weights</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="n">tot_weight</span><span class="p">))</span><span class="o">*</span><span class="n">num_samples</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">num_graphs</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">num_graphs</span><span class="p">)),</span> <span class="n">weights</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">,</span>
+                <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;expected&#39;</span><span class="p">)</span>   
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;verification/&#39;</span><span class="o">+</span> <span class="n">name</span> <span class="o">+</span><span class="s1">&#39;.png&#39;</span><span class="p">)</span>  </div>
+
+<div class="viewcode-block" id="test_sampling_seven_node"><a class="viewcode-back" href="../index.html#dist_verification.test_sampling_seven_node">[docs]</a><span class="k">def</span> <span class="nf">test_sampling_seven_node</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    This tests the MCMC&#39;s ability to sample graphs uniformly, on degree seq.</span>
+<span class="sd">    5,3,2,2,2,1,1.   Output is saved to subdirectory verification with name</span>
+<span class="sd">    beginning in &#39;SevenNode&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">samples</span> <span class="o">=</span> <span class="mi">8000000</span>
+ 
+    <span class="k">for</span> <span class="n">loops</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">multi</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">uniform</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;SevenNode&#39;</span>  
+                <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_w_loops&#39;</span><span class="p">][</span><span class="n">loops</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_w_multi&#39;</span><span class="p">][</span><span class="n">multi</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;_stub-labeled&#39;</span><span class="p">,</span><span class="s1">&#39;_vertex-labeled&#39;</span><span class="p">][</span><span class="n">uniform</span><span class="p">]</span>
+        
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">test_sampling</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">its</span><span class="o">=</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_uniformly</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">)</span>
+                <span class="n">plot_vals</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+                
+                
+<div class="viewcode-block" id="test_sampling_five_node"><a class="viewcode-back" href="../index.html#dist_verification.test_sampling_five_node">[docs]</a><span class="k">def</span> <span class="nf">test_sampling_five_node</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    This tests the MCMC&#39;s ability to sample graphs uniformly, on degree seq.</span>
+<span class="sd">    1,2,2,2,1.   Output is saved to subdirectory verification with name</span>
+<span class="sd">    beginning in &#39;FiveNode&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
+    <span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+
+    <span class="n">samples</span> <span class="o">=</span> <span class="mi">200000</span>
+ 
+    <span class="k">for</span> <span class="n">loops</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">multi</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span><span class="bp">True</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">uniform</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">]:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;FiveNode&#39;</span>   
+                <span class="n">name</span> <span class="o">=</span> <span class="n">name</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_w_loops&#39;</span><span class="p">][</span><span class="n">loops</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_w_multi&#39;</span><span class="p">][</span><span class="n">multi</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;_stub-labeled&#39;</span><span class="p">,</span><span class="s1">&#39;_vertex-labeled&#39;</span><span class="p">][</span><span class="n">uniform</span><span class="p">]</span>
+        
+                <span class="n">vals</span> <span class="o">=</span> <span class="n">test_sampling</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">its</span><span class="o">=</span><span class="n">samples</span><span class="p">,</span> <span class="n">sample_uniformly</span> <span class="o">=</span> <span class="n">uniform</span><span class="p">)</span>
+                <span class="n">plot_vals</span><span class="p">(</span><span class="n">vals</span><span class="p">,</span> <span class="n">uniform</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span></div>
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+    <span class="n">test_sampling_five_node</span><span class="p">()</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Bailey Fosdick, Daniel Larremore, Joel Nishimura, Johan Ugander.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>dbl_edge_mcmc &mdash; dbl_edge_mcmc .1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="dbl_edge_mcmc .1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for dbl_edge_mcmc</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Tue Jul 19 07:43:30 2016</span>
+
+<span class="sd">@author: Joel Nishimura</span>
+
+
+<span class="sd">This module contains the core methods used to uniformly sample graphs with </span>
+<span class="sd">fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="c1">#</span>
+<span class="c1">#There are two primary ways to utilize this module, either though providing and</span>
+<span class="c1">#maintaining a networkx graph/multigraph object as in MCMC_class, or by providing </span>
+<span class="c1">#and maintaining an adjacency matrix and an edge list as in the functions </span>
+<span class="c1">#MCMC_step_stub and MCMC_step. In either approach it is necessary to specify</span>
+<span class="c1">#the desired graph space by stating whether self-loops and/or multiedges are </span>
+<span class="c1">#allowed as well deciding whether the graph is stub- or vertex-labeled. </span>
+<span class="c1"># </span>
+<span class="c1">#For a list of function arguments please see the function&#39;s specific </span>
+<span class="c1">#documentation.</span>
+<span class="c1">#</span>
+<span class="c1">#MCMC_step and MCMC_step_uniform</span>
+<span class="c1">#-------------------------------</span>
+<span class="c1">#</span>
+<span class="c1">#Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and </span>
+<span class="c1">#vertex-labeled (respectively) double edge swap and correspond to Algorithms 1 </span>
+<span class="c1">#and 3 in the accompanying paper. These functions modify a full (non-sparse) </span>
+<span class="c1">#graph adjacency matrix, a list of edges, and a length 4 list, all in place. </span>
+<span class="c1">#Both take the same arguments (as detailed below).</span>
+<span class="c1">#</span>
+<span class="c1">#    Example:  </span>
+<span class="c1">#    </span>
+<span class="c1">#::    </span>
+<span class="c1">#    </span>
+<span class="c1">#  import numpy as np</span>
+<span class="c1">#  A = np.array([[0,1,0],[1,2,2],[0,2,0 ]])</span>
+<span class="c1">#  edge_list = np.array([[0,1],[1,2],[1,2],[1,1]])</span>
+<span class="c1">#  swaps = [0,0,0,0]</span>
+<span class="c1">#  MCMC_step_stub(A, edge_list, swaps, loops = True, multi = True)</span>
+<span class="c1">#</span>
+<span class="c1">#This performs a single MCMC step on a stub-labeled loopy multigraph, </span>
+<span class="c1">#potentially updating A, edge_list and swap with new, post-swap values. </span>
+<span class="c1">#</span>
+<span class="c1">#Both functions return a boolean, which is true only if the Markov chain step</span>
+<span class="c1">#altered the adjacency matrix (as opposed to resampling the current graph).</span>
+<span class="c1">#If the adjacency matrix is altered the swaps argument will be changed in place,</span>
+<span class="c1">#storing the nodes that were swapped. </span>
+<span class="c1">#</span>
+<span class="c1">#MCMC_class</span>
+<span class="c1">#----------</span>
+<span class="c1">#</span>
+<span class="c1">#The MCMC_class is initialized with a networkx graph, along with the three choices</span>
+<span class="c1">#that define the graph space.  Calling the class function &#39;get_graph&#39; </span>
+<span class="c1">#advances the Markov chain and returns the current networkx graph </span>
+<span class="c1">#</span>
+<span class="c1">#    Example:  </span>
+<span class="c1">#</span>
+<span class="c1">#::    </span>
+<span class="c1">#</span>
+<span class="c1">#  import networkx as nx</span>
+<span class="c1">#  G = nx.Graph()</span>
+<span class="c1">#  G.add_path([0,1,2,3,4])</span>
+<span class="c1">#  MC = MCMC_class(G, loops = True, multi = True, v_labeled = False)</span>
+<span class="c1">#  G2 = MC.get_graph()</span>
+<span class="c1">#</span>
+<span class="c1">#This takes a path graph on 4 nodes, instantiates a MCMC_class based on this </span>
+<span class="c1">#graph and returns a pointer to a graph G2 which differs from G by one double</span>
+<span class="c1">#edge swap. Notice that this samples from the space of stub-labeled loopy </span>
+<span class="c1">#multigraphs, but can be easily adjusted to other spaces.    </span>
+<span class="c1">#</span>
+<span class="c1">#</span>
+<span class="c1">#Notes</span>
+<span class="c1">#-----</span>
+<span class="c1">#In general, directly calling MCMC_step or MCMC_step_stub is faster than </span>
+<span class="c1">#using MCMC_class, since updating networkx data structures doesn&#39;t benefit </span>
+<span class="c1">#from numba acceleration.</span>
+<span class="c1">#</span>
+<span class="c1">#For large graphs, the full adjacency matrix may not be able to be stored </span>
+<span class="c1">#in memory. If so, the ‘@nb.jit’ function decorator can be deleted and a sparse</span>
+<span class="c1">#matrix can be passed into these functions as an argument, though at a </span>
+<span class="c1">#significant cost in speed.</span>
+<span class="c1">#</span>
+<span class="c1">#We use the convention that a self-loop (u,u) contributes 2 to the diagonal of </span>
+<span class="c1">#an adjacency matrix, not 1 as in Networkx.  </span>
+<span class="c1">#</span>
+<span class="c1">#References</span>
+<span class="c1">#----------</span>
+<span class="c1">#Bailey K. Fosdick, Daniel B. Larremore, Joel Nishimura, Johan Ugander. </span>
+<span class="c1">#Configuring Random Graph Models with Fixed Degree Sequences (2016)</span>
+
+
+
+<span class="n">__docformat__</span> <span class="o">=</span> <span class="s1">&#39;reStructuredText&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+<span class="c1">#import numba as nb</span>
+
+
+<span class="c1">#If numba can&#39;t load, the following do-nothing decorator will apply</span>
+<span class="k">def</span> <span class="nf">__no_jit__</span><span class="p">(</span><span class="o">*</span><span class="n">dargs</span><span class="p">,</span><span class="o">**</span><span class="n">dkwargs</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">decorate</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+        <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">call</span>
+    <span class="k">return</span> <span class="n">decorate</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">numba</span> <span class="kn">as</span> <span class="nn">nb</span>
+    <span class="n">jit</span> <span class="o">=</span>  <span class="n">nb</span><span class="o">.</span><span class="n">jit</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="n">jit</span> <span class="o">=</span> <span class="n">__no_jit__</span>
+
+
+
+<span class="nd">@jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">nogil</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="viewcode-block" id="MCMC_step"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Performs a vertex-labeled double edge swap.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     A (nxn numpy array): The adjacency matrix. Will be changed inplace.</span>
+<span class="sd">    |     edge_list (nx2 numpy array): List of edges in A. Node names should be </span>
+<span class="sd">            the integers 0 to n-1. Will be changed inplace. Edges must appear</span>
+<span class="sd">            only once.</span>
+<span class="sd">    |     swaps (length 4 numpy array): Changed inplace, will contain the four</span>
+<span class="sd">            nodes swapped if a swap is accepted.</span>
+<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     bool: True if swap is accepted, False if current graph is resampled. </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This method currently requires a full adjacency matrix. Adjusting this </span>
+<span class="sd">    to work a sparse adjacency matrix simply requires removing the &#39;@jit&#39;</span>
+<span class="sd">    decorator.  This method supports loopy graphs, but depending on the degree</span>
+<span class="sd">    sequence, it may not be able to sample from all loopy graphs.</span>
+<span class="sd">            </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Choose two edges uniformly at random</span>
+    <span class="n">m</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">:</span> <span class="c1"># Prevents picking the same edge twice</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span>
+        
+    <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span>        
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">&lt;</span><span class="mf">0.5</span><span class="p">:</span> <span class="c1">#Pick either swap orientation 50% at random</span>
+        <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span>        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span>
+        
+    <span class="c1"># Note: tracking edge weights is the sole reason we require the adj matrix.</span>
+    <span class="c1"># Numba doesn&#39;t allow sparse or dict objs. If you don&#39;t want to use numba</span>
+    <span class="c1"># simply insert your favorite hash map (e.g. G[u][v] for nx multigraph G).</span>
+    <span class="n">w_uv</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">]</span>
+    <span class="n">w_xy</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
+    <span class="n">w_ux</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+    <span class="n">w_vy</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
+
+    <span class="c1"># If multiedges are not allowed, resample if swap would replicate an edge</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">multi</span> <span class="ow">and</span> <span class="p">(</span> <span class="n">w_ux</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">w_vy</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="p">):</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    
+    <span class="n">num_loops</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">unique_nodes</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="c1"># Here we count the number of self-loops and unique nodes in our proposed 2 </span>
+    <span class="c1"># edges. Using the convention where self-loops contribute 2 to the adj matrix</span>
+    <span class="c1"># requies dividing entries on the diagonal by 2 to get the number of </span>
+    <span class="c1"># self-loops.   </span>
+    <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>        
+        <span class="n">num_loops</span> <span class="o">+=</span> <span class="mi">1</span>   
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">w_uv</span> <span class="o">=</span> <span class="n">w_uv</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="n">num_loops</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">w_xy</span> <span class="o">=</span> <span class="n">w_xy</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">w_ux</span> <span class="o">=</span> <span class="n">w_ux</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">w_vy</span> <span class="o">=</span> <span class="n">w_vy</span><span class="o">/</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">v</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">unique_nodes</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="k">if</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="o">-</span><span class="mi">2</span><span class="p">:</span> <span class="c1"># If u=v=x=y then unique_nodes currently is -2</span>
+        <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">if</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Correcting u=v=x~=y or similar rotation</span>
+        <span class="n">unique_nodes</span> <span class="o">=</span> <span class="mi">2</span>
+
+
+    <span class="c1"># We now run through the different possible edge swap cases</span>
+    <span class="k">if</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">multi</span><span class="p">:</span> <span class="c1"># Swapping two self-loops creates would create a multiedge</span>
+                <span class="n">swapsTo</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
+                <span class="n">swapsFrom</span> <span class="o">=</span> <span class="p">((</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">elif</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span> <span class="c1"># The only swap on two nodes with 1 self-loop doesn&#39;t change graph</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># No_loops on 2 nodes</span>
+            <span class="k">if</span> <span class="n">loops</span><span class="p">:</span>
+                <span class="n">swapsTo</span> <span class="o">=</span> <span class="p">(</span><span class="n">w_uv</span><span class="o">*</span><span class="p">(</span><span class="n">w_xy</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span> 
+                <span class="n">swapsFrom</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># Only change would make 2 self-loops</span>
+                <span class="k">return</span> <span class="bp">False</span>
+    <span class="k">elif</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">loops</span><span class="p">:</span> <span class="c1"># Swapping adjacent edges creates a self-loop</span>
+                <span class="n">swapsTo</span> <span class="o">=</span> <span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
+                <span class="n">swapsFrom</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span> <span class="c1"># Only change would make a self-loop</span>
+                <span class="k">return</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span> <span class="c1"># Num_loops==1</span>
+            <span class="n">swapsTo</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
+            <span class="n">swapsFrom</span> <span class="o">=</span> <span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span> <span class="c1"># Unique_nodes ==4</span>
+        <span class="n">swapsTo</span> <span class="o">=</span> <span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
+        <span class="n">swapsFrom</span> <span class="o">=</span> <span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Based upon the above cases we calculate the minimum probability of the </span>
+    <span class="c1"># swap and the reverse swap.</span>
+    <span class="n">probTo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">swapsTo</span><span class="p">)</span>
+    <span class="n">probFrom</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="n">swapsFrom</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">probFrom</span><span class="o">/</span><span class="n">probTo</span> <span class="o">&lt;</span> <span class="mf">1.0</span><span class="p">:</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="n">probFrom</span><span class="o">/</span><span class="n">probTo</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">P</span> <span class="o">=</span> <span class="mf">1.0</span>
+    
+
+    <span class="c1"># If we proceed with the swap we update A, swaps and edge_list</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">P</span><span class="p">:</span>
+        <span class="n">swaps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="c1"># Numba currently is having trouble with slicing</span>
+        <span class="n">swaps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">swaps</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">swaps</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        
+        <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+        
+        <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">A</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
+        <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+        <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="k">return</span> <span class="bp">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">False</span></div>
+            
+<span class="nd">@jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">nogil</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="viewcode-block" id="MCMC_step_stub"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step_stub">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step_stub</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Performs a stub-labeled double edge swap.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     A (nxn numpy array): The adjacency matrix. Will be changed inplace.</span>
+<span class="sd">    |     edge_list (nx2 numpy array): List of edges in A. Node names should be </span>
+<span class="sd">            the integers 0 to n-1. Will be changed inplace. Edges must appear</span>
+<span class="sd">            only once.</span>
+<span class="sd">    |     swaps (length 4 numpy array): Changed inplace, will contain the four</span>
+<span class="sd">            nodes swapped if a swap is accepted.</span>
+<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     bool: True if swap is accepted, False if current graph is resampled. </span>
+<span class="sd">    </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    This method currently requires a full adjacency matrix. Adjusting this </span>
+<span class="sd">    to work a sparse adjacency matrix simply requires removing the &#39;@nb.jit&#39;</span>
+<span class="sd">    decorator. This method supports loopy graphs, but depending on the degree</span>
+<span class="sd">    sequence, it may not be able to sample from all loopy graphs.</span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Choose two edges uniformly at random</span>
+    <span class="n">m</span><span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span>
+    <span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+    <span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">:</span> <span class="c1"># Prevents picking the same edge twice</span>
+        <span class="n">p2</span> <span class="o">=</span> <span class="n">m</span><span class="o">-</span><span class="mi">1</span>
+        
+    <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">]</span>        
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">()</span><span class="o">&lt;</span><span class="mf">0.5</span><span class="p">:</span> <span class="c1">#Pick either swap orientation 50% at random</span>
+        <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span>        
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">y</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">]</span>
+
+    <span class="c1"># Note: tracking edge weights is the sole reason we require the adj matrix.</span>
+    <span class="c1"># Numba doesn&#39;t allow sparse or dict objs. If you don&#39;t want to use numba</span>
+    <span class="c1"># simply insert your favorite hash map (e.g. G[u][v] for nx multigraph G).</span>
+    <span class="n">w_ux</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">x</span><span class="p">]</span>
+    <span class="n">w_vy</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
+
+    <span class="c1"># If multiedges are not allowed, resample if swap would replicate an edge</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">multi</span><span class="p">:</span>
+        <span class="k">if</span> <span class="p">(</span> <span class="n">w_ux</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">w_vy</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="p">):</span>
+            <span class="k">return</span> <span class="bp">False</span>
+            
+        <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">v</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    
+    <span class="c1">#If loops are not allowed then only swaps on 4 distinct nodes are possible</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">loops</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">u</span> <span class="o">==</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">False</span>
+    
+   
+    <span class="n">swaps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span> <span class="c1"># Numba currently is having trouble with slicing</span>
+    <span class="n">swaps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">swaps</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">swaps</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    
+    <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">1</span>
+    
+    <span class="n">A</span><span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">x</span><span class="p">,</span><span class="n">u</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">A</span><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="n">v</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>   
+
+    <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">u</span>
+    <span class="n">edge_list</span><span class="p">[</span><span class="n">p1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="n">edge_list</span><span class="p">[</span><span class="n">p2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">y</span>
+    
+    <span class="k">return</span> <span class="bp">True</span></div>
+
+
+
+   
+<div class="viewcode-block" id="MCMC_class"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_class">[docs]</a><span class="k">class</span> <span class="nc">MCMC_class</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    MCMC_class stores the objects necessary for MCMC steps. This</span>
+<span class="sd">    implementation maintains a networkx version of the graph, though at some</span>
+<span class="sd">    cost in speed.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     G (networkx_class): This graph initializes the Markov chain. All </span>
+<span class="sd">             sampled graphs will have the same degree sequence as G.</span>
+<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    |     v_labeled (bool): True only if the graph space is vertex-labeled. </span>
+<span class="sd">            True by default.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     None </span>
+<span class="sd">        </span>
+<span class="sd">    Notes</span>
+<span class="sd">    -----</span>
+<span class="sd">    MCMC_class copies the instance of the graph used to initialize it. This </span>
+<span class="sd">    class supports loopy graphs, but depending on the degree sequence, it may </span>
+<span class="sd">    not be able to sample from all loopy graphs.     </span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">v_labeled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">=</span> <span class="n">loops</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">multi</span> <span class="o">=</span> <span class="n">multi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">uniform</span> <span class="o">=</span> <span class="n">v_labeled</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uniform</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">MCMC_step</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">MCMC_step_stub</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="p">)</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">edge_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">swaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+        
+        
+
+<div class="viewcode-block" id="MCMC_class.get_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_class.get_graph">[docs]</a>    <span class="k">def</span> <span class="nf">get_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        </span>
+<span class="sd">        The Markov chains will attempt a double edge swap, after which the next</span>
+<span class="sd">        graph/multigraph in the chain is returned.</span>
+<span class="sd">        </span>
+<span class="sd">        | Args:</span>
+<span class="sd">        |     None</span>
+<span class="sd">        </span>
+<span class="sd">        | Returns:</span>
+<span class="sd">        |     The Markov chain&#39;s current graph.</span>
+<span class="sd">        </span>
+<span class="sd">        Notes</span>
+<span class="sd">        -----</span>
+<span class="sd">        Modifying the returned graph will cause errors in repeated calls of </span>
+<span class="sd">        this function.</span>
+<span class="sd">            </span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_list</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">swaps</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">loops</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">multi</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">new</span><span class="p">:</span>
+<span class="c1">#            print swaps, new</span>
+<span class="c1">#            print A</span>
+            <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">swaps</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span></div></div>
+        
+<div class="viewcode-block" id="flatten_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.flatten_graph">[docs]</a><span class="k">def</span> <span class="nf">flatten_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Takes an input graph and returns a version w/ or w/o loops and </span>
+<span class="sd">    multiedges.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     G (networkx_class): The original graph.</span>
+<span class="sd">    |     loops (bool): True only if loops are allowed in output graph.</span>
+<span class="sd">    |     multi (bool): True only if multiedges are allowed in output graph.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     A graph with or without multiedges and/or self-loops, as specified. </span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">convert_node_labels_to_integers</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>  
+    
+    <span class="k">if</span> <span class="n">loops</span> <span class="ow">and</span> <span class="n">multi</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">loops</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">multi</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">multi</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">loops</span><span class="p">:</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+        
+        
+    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">():</span>
+        <span class="n">G</span><span class="o">.</span><span class="n">remove_edge</span><span class="p">(</span><span class="o">*</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">G</span><span class="o">.</span><span class="n">selfloop_edges</span><span class="p">()</span> <span class="o">!=</span> <span class="p">[]:</span>
+        <span class="k">print</span> <span class="s2">&quot;Cannot remove all self-loops&quot;</span>
+
+    <span class="k">return</span> <span class="n">G</span>        </div>
+        
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Bailey Fosdick, Daniel Larremore, Joel Nishimura, Johan Ugander.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>

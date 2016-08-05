@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>sample_assortativity &mdash; dbl_edge_mcmc .1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="dbl_edge_mcmc .1 documentation" href="../index.html" />
+    <link rel="up" title="Module code" href="index.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for sample_assortativity</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Created on Tue Jul 19 10:06:33 2016</span>
+
+<span class="sd">@author: Joel Nishimura</span>
+
+<span class="sd">This module contains functions to sample the assortativity values of graphs </span>
+<span class="sd">with the same degree sequence as an input graph. The functions use the  </span>
+<span class="sd">dbl_edge_mcmc module to perform double edge swaps.</span>
+
+<span class="sd">Running this module as a script samples the assortativity of simple graphs</span>
+<span class="sd">with the same degree sequence as Zachary&#39;s karate club at 50k different graphs</span>
+<span class="sd">spaced over 5 million double edge swaps.</span>
+
+<span class="sd">Running the function &#39;sample_geometers&#39; performs a more resource intensive </span>
+<span class="sd">MCMC sampling of a collaboration network of geometers.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__docformat__</span> <span class="o">=</span> <span class="s1">&#39;reStructuredText&#39;</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
+<span class="kn">import</span> <span class="nn">dbl_edge_mcmc</span> <span class="kn">as</span> <span class="nn">mcmc</span>
+
+<div class="viewcode-block" id="r_sample_MCMC"><a class="viewcode-back" href="../index.html#sample_assortativity.r_sample_MCMC">[docs]</a><span class="k">def</span> <span class="nf">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">v_uniform</span> <span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">its</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;temp&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Samples the graph assortativity of graphs in a specified graph space  with </span>
+<span class="sd">    the same degree sequence as the input graph. Output is saved in </span>
+<span class="sd">    subdirectory &#39;output/&#39;.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     G (networkx graph or multigraph): Starts the MCMC at graph G. Node </span>
+<span class="sd">            names be the integers 0 to n.            </span>
+<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph</span>
+<span class="sd">            space.</span>
+<span class="sd">    |     uniform (bool): True if the space is vertex labeled, False for</span>
+<span class="sd">            stub-labeled.</span>
+<span class="sd">    |     its (int): The total number of MCMC steps</span>
+<span class="sd">    |     n_recs (int): The number of samples from the MCMC sampler, spaced out</span>
+<span class="sd">            evenly over the total number of its.</span>
+<span class="sd">    |     filename (str): the name for the output file.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |    (array) An array recording the assortativity at n_recs number of </span>
+<span class="sd">        sampled graphs.</span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>  
+    
+    <span class="n">G</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> 
+    <span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+    <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="c1">#the row sums should sum to degree</span>
+    <span class="n">edge_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">())</span>
+    <span class="n">swaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+    <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())]</span>
+    
+    <span class="k">if</span> <span class="n">v_uniform</span><span class="p">:</span>
+        <span class="n">stepper</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_step</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">stepper</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_step_stub</span>
+
+    <span class="n">inner_loop_size</span> <span class="o">=</span> <span class="n">its</span><span class="o">/</span><span class="n">n_recs</span>
+    
+    <span class="n">r_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_recs</span><span class="p">)</span>
+    
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_recs</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">inner_loop_size</span><span class="p">)):</span>
+            
+            <span class="n">stepper</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
+        
+        <span class="n">r_samples</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_r</span><span class="p">(</span><span class="n">degree</span><span class="p">,</span><span class="n">edge_list</span><span class="p">)</span>
+
+                
+    <span class="n">data_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wloops&#39;</span><span class="p">][</span><span class="n">loops</span><span class="p">]</span> <span class="o">+</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wmulti&#39;</span><span class="p">][</span><span class="n">multi</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;_stubUniform&#39;</span><span class="p">,</span><span class="s1">&#39;_vertexUniform&#39;</span><span class="p">][</span><span class="n">v_uniform</span><span class="p">]</span>   
+    <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="n">data_suffix</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="s1">&#39;output/&#39;</span><span class="o">+</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">r_samples</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    
+    <span class="k">return</span> <span class="n">r_samples</span></div>
+
+
+
+
+
+<span class="nd">@mcmc.jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">nogil</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<div class="viewcode-block" id="calc_r"><a class="viewcode-back" href="../index.html#sample_assortativity.calc_r">[docs]</a><span class="k">def</span> <span class="nf">calc_r</span><span class="p">(</span><span class="n">degree</span><span class="p">,</span><span class="n">edges</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    Calculates the assortativity r based on a network&#39;s edgelist and degrees.</span>
+<span class="sd">    </span>
+<span class="sd">    | Args:</span>
+<span class="sd">    |     degree (dict): Keys are node names, values are degrees.</span>
+<span class="sd">    |     edges (list): A list of the edges (u,v) in the graph.</span>
+<span class="sd">    </span>
+<span class="sd">    | Returns:</span>
+<span class="sd">    |     (float) The assortativity of the graph.</span>
+<span class="sd">        </span>
+<span class="sd">    &#39;&#39;&#39;</span>     
+    
+    
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>   
+    
+    <span class="n">dsq</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">dsum</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>       
+    <span class="k">for</span> <span class="n">ll</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+        <span class="n">e</span> <span class="o">=</span> <span class="n">edges</span><span class="p">[</span><span class="n">ll</span><span class="p">]</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">e</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">di</span> <span class="o">=</span> <span class="n">degree</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">dj</span> <span class="o">=</span> <span class="n">degree</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+        <span class="n">s</span> <span class="o">+=</span> <span class="n">di</span><span class="o">*</span><span class="n">dj</span>
+        <span class="n">dsq</span> <span class="o">+=</span> <span class="n">di</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">dj</span><span class="o">**</span><span class="mi">2</span>
+        <span class="n">dsum</span> <span class="o">+=</span> <span class="n">di</span> <span class="o">+</span> <span class="n">dj</span>
+        
+        <span class="n">dssq</span> <span class="o">=</span> <span class="n">dsum</span><span class="o">**</span><span class="mi">2</span>
+    <span class="k">if</span> <span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">dsq</span><span class="o">-</span><span class="n">dssq</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="k">if</span> <span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">s</span><span class="o">-</span><span class="n">dssq</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">elif</span> <span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">s</span><span class="o">-</span><span class="n">dssq</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mf">1.0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">r</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">s</span><span class="o">-</span><span class="n">dssq</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">2.0</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">dsq</span><span class="o">-</span><span class="n">dssq</span><span class="p">)</span> 
+    
+    <span class="k">return</span> <span class="n">r</span></div>
+
+
+<div class="viewcode-block" id="load_geometers"><a class="viewcode-back" href="../index.html#sample_assortativity.load_geometers">[docs]</a><span class="k">def</span> <span class="nf">load_geometers</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    This loads the geometers graph from file and returns a networkx multigraph.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">read_weighted_edgelist</span><span class="p">(</span><span class="s1">&#39;geomnet_edgelist&#39;</span><span class="p">,</span><span class="n">nodetype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">MG</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">()</span>
+
+    <span class="n">rename</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">data</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges_iter</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+
+        <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="p">[</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">]:</span>
+            <span class="k">try</span><span class="p">:</span> 
+                <span class="n">rename</span><span class="p">[</span><span class="n">w</span><span class="p">]</span>
+            <span class="k">except</span><span class="p">:</span>
+                <span class="n">rename</span><span class="p">[</span><span class="n">w</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+                <span class="n">name</span> <span class="o">+=</span> <span class="mi">1</span>
+                
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])):</span>
+            <span class="n">MG</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">rename</span><span class="p">[</span><span class="n">u</span><span class="p">],</span><span class="n">rename</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+            
+    <span class="k">return</span> <span class="n">MG</span></div>
+
+
+<div class="viewcode-block" id="sample_geometers"><a class="viewcode-back" href="../index.html#sample_assortativity.sample_geometers">[docs]</a><span class="k">def</span> <span class="nf">sample_geometers</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    </span>
+<span class="sd">    This calculates the assortativity on a collaboration network of geometers,</span>
+<span class="sd">    on each of the 7 possible graphs spaces which allow/disallow self-loops,</span>
+<span class="sd">    multiedges, and are either stub or vertex-labeled. 10 thousand samples are drawn</span>
+<span class="sd">    over the course of 5 billion double edge swaps. Output is saved in the</span>
+<span class="sd">    &#39;output&#39; subdirectory with the name &#39;geo&#39;. </span>
+<span class="sd">    </span>
+<span class="sd">    References:    </span>
+<span class="sd">    Bill Jones. Computational geometry database </span>
+<span class="sd">    (http://jeffe.cs.illinois.edu/compgeom/biblios.html), 2002.</span>
+<span class="sd">    </span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="n">G</span> <span class="o">=</span> <span class="n">load_geometers</span><span class="p">()</span> 
+    <span class="k">for</span> <span class="n">loops</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">multi</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
+            <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="bp">False</span><span class="p">,</span><span class="n">its</span> <span class="o">=</span> <span class="mi">5000000000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
+                          <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;geo&#39;</span><span class="p">)</span></div>
+    
+    
+
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    
+    <span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">py</span>
+    
+    <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
+    <span class="n">r_vals</span> <span class="o">=</span> <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">loops</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">multi</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">v_uniform</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+                  <span class="n">its</span> <span class="o">=</span> <span class="mi">5000000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;karate&#39;</span><span class="p">)</span>
+    
+    <span class="n">py</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">r_vals</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">py</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;assortativity&#39;</span><span class="p">)</span>
+    <span class="n">py</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;counts&#39;</span><span class="p">)</span>
+    <span class="n">py</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;simple graphs with karate</span><span class="se">\&#39;</span><span class="s1">s deg seq&#39;</span><span class="p">)</span>
+        
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="index.html">Module code</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Bailey Fosdick, Daniel Larremore, Joel Nishimura, Johan Ugander.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.7</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
