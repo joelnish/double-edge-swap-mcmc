@@ -48,7 +48,7 @@ Simply import desired python modules into an instance of Python 2.7.x.
 
 - Bailey K. Fosdick, Department of Statistics, Colorado State University, Ft. Collins, CO 80523 USA (bailey [at] stat.colostate.edu)
 - Daniel B. Larremore, Santa Fe Institute, 1399 Hyde Park Rd. Sante Fe, NM, 87501 USA (larremore [at] santafe.edu)
-- Joel Nishimura, School of Mathematical and Natural Sciences, Arizona State University, Glendale, AZ 85306 USA(joel.nishimura [at] asu.edu)
+- Joel Nishimura, School of Mathematical and Natural Sciences, Arizona State University, Glendale, AZ 85306 USA (joel.nishimura [at] asu.edu)
 - Johan Ugander, Management Science & Engineering, Stanford University, Stanford, CA, 94305 USA (jugander [at] stanford.edu) 
 
 
