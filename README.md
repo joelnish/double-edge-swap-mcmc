@@ -54,7 +54,7 @@ Simply import desired python modules into an instance of Python 2.7.x.
 
 ## Contact
 
-Please direct questions and bug reports to joel.nishimura@asu.edu.
+Please direct questions and bug reports to joel.nishimura [at] asu.edu.
 
 
   
