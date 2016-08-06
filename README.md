@@ -14,7 +14,7 @@ If this code is utilized in work contributing to a academic publication please c
 
 -  README.md
 -  dbl_edge_doc.pdf
--  dbl_edge_worksheet.ipynb
+-  [dbl_edge_worksheet.ipynb](./dbl_edge_worksheet.ipynb) (Jupyter Notebook demonstration)
 -  dbl_edge_mcmc.py
 -  dist_verification.py
 -  sample_assortativity.py
