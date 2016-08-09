@@ -23,7 +23,7 @@ import numpy as np
 import networkx as nx
 import dbl_edge_mcmc as mcmc
 
-def r_sample_MCMC(G,loops,multi,v_uniform =True, its = 10000, n_recs = 100,filename = 'temp'):
+def r_sample_MCMC(G,allow_loops,allow_multi,is_v_labeled =True, its = 10000, n_recs = 100,filename = 'temp'):
     '''
     
     Samples the graph assortativity of graphs in a specified graph space  with 
@@ -33,8 +33,8 @@ def r_sample_MCMC(G,loops,multi,v_uniform =True, its = 10000, n_recs = 100,filen
     | Args:
     |     G (networkx graph or multigraph): Starts the MCMC at graph G. Node 
             names be the integers 0 to n.            
-    |     loops (bool): True only if loops allowed in the graph space.
-    |     multi (bool): True only if multiedges are allowed in the graph
+    |     allow_loops (bool): True only if loops allowed in the graph space.
+    |     allow_multi (bool): True only if multiedges are allowed in the graph
             space.
     |     uniform (bool): True if the space is vertex labeled, False for
             stub-labeled.
@@ -49,7 +49,7 @@ def r_sample_MCMC(G,loops,multi,v_uniform =True, its = 10000, n_recs = 100,filen
         
     '''  
     
-    G = mcmc.flatten_graph(G,loops,multi)
+    G = mcmc.flatten_graph(G,allow_loops,allow_multi)
     A = nx.adjacency_matrix(G) 
     A = A.toarray()
     A += np.diag(np.diag(A)) #the row sums should sum to degree
@@ -57,8 +57,8 @@ def r_sample_MCMC(G,loops,multi,v_uniform =True, its = 10000, n_recs = 100,filen
     swaps = np.zeros(4,dtype=np.int64)
     degree = [G.degree(i) for i in range(0,G.number_of_nodes())]
     
-    if v_uniform:
-        stepper = mcmc.MCMC_step
+    if is_v_labeled:
+        stepper = mcmc.MCMC_step_vertex
     else:
         stepper = mcmc.MCMC_step_stub
 
@@ -70,12 +70,12 @@ def r_sample_MCMC(G,loops,multi,v_uniform =True, its = 10000, n_recs = 100,filen
     for j in xrange(0,n_recs):
         for i in xrange(0,int(inner_loop_size)):
             
-            stepper(A,edge_list,swaps,loops,multi)
+            stepper(A,edge_list,swaps,allow_loops,allow_multi)
         
         r_samples[j] = calc_r(degree,edge_list)
 
                 
-    data_suffix = ['','_wloops'][loops] +['','_wmulti'][multi] + ['_stubUniform','_vertexUniform'][v_uniform]   
+    data_suffix = ['','_wloops'][allow_loops] +['','_wmulti'][allow_multi] + ['_stub','_vertex'][is_v_labeled]   
     filename = filename + data_suffix
     f = file('output/'+filename+'.txt','w')
     f.write(str(list(r_samples))+'\n')
@@ -174,9 +174,9 @@ def sample_geometers():
     '''
     
     G = load_geometers() 
-    for loops in [True,False]:
-        for multi in [True,False]:
-            r_sample_MCMC(G,loops,multi,False,its = 5000000000, n_recs = 10000,
+    for allow_loops in [True,False]:
+        for allow_multi in [True,False]:
+            r_sample_MCMC(G,allow_loops,allow_multi,False,its = 5000000000, n_recs = 10000,
                           filename = 'geo')
     
     
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     import pylab as py
     
     G = nx.karate_club_graph()
-    r_vals = r_sample_MCMC(G, loops = False, multi = False, v_uniform = False,
+    r_vals = r_sample_MCMC(G, allow_loops = False, allow_multi = False, is_v_labeled = False,
                   its = 5000000, n_recs = 50000,filename = 'karate')
     
     py.hist(r_vals,bins = 50)

@@ -13,17 +13,17 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.
 #There are two primary ways to utilize this module, either though providing and
 #maintaining a networkx graph/multigraph object as in MCMC_class, or by providing 
 #and maintaining an adjacency matrix and an edge list as in the functions 
-#MCMC_step_stub and MCMC_step. In either approach it is necessary to specify
+#MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify
 #the desired graph space by stating whether self-loops and/or multiedges are 
 #allowed as well deciding whether the graph is stub- or vertex-labeled. 
 # 
 #For a list of function arguments please see the function's specific 
 #documentation.
 #
-#MCMC_step and MCMC_step_uniform
+#MCMC_step_vertex and MCMC_step_stub
 #-------------------------------
 #
-#Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and 
+#Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and 
 #vertex-labeled (respectively) double edge swap and correspond to Algorithms 1 
 #and 3 in the accompanying paper. These functions modify a full (non-sparse) 
 #graph adjacency matrix, a list of edges, and a length 4 list, all in place. 
@@ -37,7 +37,7 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.
 #  A = np.array([[0,1,0],[1,2,2],[0,2,0 ]])
 #  edge_list = np.array([[0,1],[1,2],[1,2],[1,1]])
 #  swaps = [0,0,0,0]
-#  MCMC_step_stub(A, edge_list, swaps, loops = True, multi = True)
+#  MCMC_step_stub(A, edge_list, swaps, allow_loops = True, allow_multi = True)
 #
 #This performs a single MCMC step on a stub-labeled loopy multigraph, 
 #potentially updating A, edge_list and swap with new, post-swap values. 
@@ -51,7 +51,7 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.
 #----------
 #
 #The MCMC_class is initialized with a networkx graph, along with the three choices
-#that define the graph space.  Calling the class function 'get_graph' 
+#that define the graph space.  Calling the class function 'step_and_get_graph' 
 #advances the Markov chain and returns the current networkx graph 
 #
 #    Example:  
@@ -61,8 +61,8 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.
 #  import networkx as nx
 #  G = nx.Graph()
 #  G.add_path([0,1,2,3,4])
-#  MC = MCMC_class(G, loops = True, multi = True, v_labeled = False)
-#  G2 = MC.get_graph()
+#  MC = MCMC_class(G, allow_loops = True, allow_multi = True, is_v_labeled = False)
+#  G2 = MC.step_and_get_graph()
 #
 #This takes a path graph on 4 nodes, instantiates a MCMC_class based on this 
 #graph and returns a pointer to a graph G2 which differs from G by one double
@@ -72,7 +72,7 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.
 #
 #Notes
 #-----
-#In general, directly calling MCMC_step or MCMC_step_stub is faster than 
+#In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than 
 #using MCMC_class, since updating networkx data structures doesn't benefit 
 #from numba acceleration.
 #
@@ -115,7 +115,7 @@ except:
 
 
 @jit(nopython=True,nogil=True)
-def MCMC_step(A,edge_list,swaps,loops,multi):
+def MCMC_step_vertex(A,edge_list,swaps,allow_loops,allow_multi):
     '''
     
     Performs a vertex-labeled double edge swap.
@@ -127,8 +127,8 @@ def MCMC_step(A,edge_list,swaps,loops,multi):
             only once.
     |     swaps (length 4 numpy array): Changed inplace, will contain the four
             nodes swapped if a swap is accepted.
-    |     loops (bool): True only if loops allowed in the graph space.
-    |     multi (bool): True only if multiedges are allowed in the graph space.
+    |     allow_loops (bool): True only if loops allowed in the graph space.
+    |     allow_multi (bool): True only if multiedges are allowed in the graph space.
     
     | Returns:
     |     bool: True if swap is accepted, False if current graph is resampled. 
@@ -163,7 +163,7 @@ def MCMC_step(A,edge_list,swaps,loops,multi):
     w_vy = A[v,y]
 
     # If multiedges are not allowed, resample if swap would replicate an edge
-    if not multi and ( w_ux>=1 or w_vy>=1 ):
+    if not allow_multi and ( w_ux>=1 or w_vy>=1 ):
         return False
     
     num_loops = 0
@@ -200,7 +200,7 @@ def MCMC_step(A,edge_list,swaps,loops,multi):
     # We now run through the different possible edge swap cases
     if unique_nodes == 2:
         if num_loops == 2:
-            if multi: # Swapping two self-loops creates would create a multiedge
+            if allow_multi: # Swapping two self-loops creates would create a multiedge
                 swapsTo = 2*w_uv*w_xy
                 swapsFrom = ((w_ux+2)*(w_vy+1))/2
             else:
@@ -208,14 +208,14 @@ def MCMC_step(A,edge_list,swaps,loops,multi):
         elif num_loops == 1:
             return False # The only swap on two nodes with 1 self-loop doesn't change graph
         else: # No_loops on 2 nodes
-            if loops:
+            if allow_loops:
                 swapsTo = (w_uv*(w_xy-1))/2 
                 swapsFrom = 2*(w_ux+1)*(w_vy+1) 
             else: # Only change would make 2 self-loops
                 return False
     elif unique_nodes == 3:
         if num_loops == 0:
-            if loops: # Swapping adjacent edges creates a self-loop
+            if allow_loops: # Swapping adjacent edges creates a self-loop
                 swapsTo = w_uv*w_xy
                 swapsFrom = 2*(w_ux+1)*(w_vy+1)
             else: # Only change would make a self-loop
@@ -264,7 +264,7 @@ def MCMC_step(A,edge_list,swaps,loops,multi):
         return False
             
 @jit(nopython=True,nogil=True)
-def MCMC_step_stub(A,edge_list,swaps,loops,multi):
+def MCMC_step_stub(A,edge_list,swaps,allow_loops,allow_multi):
     '''
     
     Performs a stub-labeled double edge swap.
@@ -276,8 +276,8 @@ def MCMC_step_stub(A,edge_list,swaps,loops,multi):
             only once.
     |     swaps (length 4 numpy array): Changed inplace, will contain the four
             nodes swapped if a swap is accepted.
-    |     loops (bool): True only if loops allowed in the graph space.
-    |     multi (bool): True only if multiedges are allowed in the graph space.
+    |     allow_loops (bool): True only if loops allowed in the graph space.
+    |     allow_multi (bool): True only if multiedges are allowed in the graph space.
     
     | Returns:
     |     bool: True if swap is accepted, False if current graph is resampled. 
@@ -310,7 +310,7 @@ def MCMC_step_stub(A,edge_list,swaps,loops,multi):
     w_vy = A[v,y]
 
     # If multiedges are not allowed, resample if swap would replicate an edge
-    if not multi:
+    if not allow_multi:
         if ( w_ux>=1 or w_vy>=1 ):
             return False
             
@@ -318,7 +318,7 @@ def MCMC_step_stub(A,edge_list,swaps,loops,multi):
             return False
     
     #If loops are not allowed then only swaps on 4 distinct nodes are possible
-    if not loops:
+    if not allow_loops:
         if u == x or u == y or v == x or v == y:
             return False
     
@@ -358,9 +358,9 @@ class MCMC_class:
     | Args:
     |     G (networkx_class): This graph initializes the Markov chain. All 
              sampled graphs will have the same degree sequence as G.
-    |     loops (bool): True only if loops allowed in the graph space.
-    |     multi (bool): True only if multiedges are allowed in the graph space.
-    |     v_labeled (bool): True only if the graph space is vertex-labeled. 
+    |     allow_loops (bool): True only if loops allowed in the graph space.
+    |     allow_multi (bool): True only if multiedges are allowed in the graph space.
+    |     is_v_labeled (bool): True only if the graph space is vertex-labeled. 
             True by default.
     
     | Returns:
@@ -373,13 +373,13 @@ class MCMC_class:
     not be able to sample from all loopy graphs.     
         
     '''
-    def __init__(self,G,loops,multi,v_labeled = True):
-        self.G = flatten_graph(G,loops,multi)
-        self.loops = loops
-        self.multi = multi
-        self.uniform = v_labeled
-        if self.uniform:
-            self.step = MCMC_step
+    def __init__(self,G,allow_loops,allow_multi,is_v_labeled = True):
+        self.G = flatten_graph(G,allow_loops,allow_multi)
+        self.allow_loops = allow_loops
+        self.allow_multi = allow_multi
+        self.is_v_labeled = is_v_labeled
+        if self.is_v_labeled:
+            self.step = MCMC_step_vertex
         else:
             self.step = MCMC_step_stub
         
@@ -391,7 +391,7 @@ class MCMC_class:
         
         
 
-    def get_graph(self):    
+    def step_and_get_graph(self):    
         '''
         
         The Markov chains will attempt a double edge swap, after which the next
@@ -409,7 +409,7 @@ class MCMC_class:
         this function.
             
         '''
-        new = self.step(self.A,self.edge_list,self.swaps,self.loops,self.multi)
+        new = self.step(self.A,self.edge_list,self.swaps,self.allow_loops,self.allow_multi)
         if new:
 #            print swaps, new
 #            print A
@@ -421,7 +421,7 @@ class MCMC_class:
         
         return self.G
         
-def flatten_graph(graph,loops,multi):
+def flatten_graph(graph,allow_loops,allow_multi):
     '''
     
     Takes an input graph and returns a version w/ or w/o loops and 
@@ -429,8 +429,8 @@ def flatten_graph(graph,loops,multi):
     
     | Args:
     |     G (networkx_class): The original graph.
-    |     loops (bool): True only if loops are allowed in output graph.
-    |     multi (bool): True only if multiedges are allowed in output graph.
+    |     allow_loops (bool): True only if loops are allowed in output graph.
+    |     allow_multi (bool): True only if multiedges are allowed in output graph.
     
     | Returns:
     |     A graph with or without multiedges and/or self-loops, as specified. 
@@ -439,11 +439,11 @@ def flatten_graph(graph,loops,multi):
     
     graph = nx.convert_node_labels_to_integers(graph)  
     
-    if loops and multi:
+    if allow_loops and allow_multi:
         return nx.MultiGraph(graph)
-    elif loops and not multi:
+    elif allow_loops and not allow_multi:
         return nx.Graph(graph)
-    elif not multi and not loops:
+    elif not allow_multi and not allow_loops:
         G = nx.Graph(graph)
     else:
         G = nx.MultiGraph(graph)

@@ -39,6 +39,7 @@ Simply import desired python modules into an instance of Python 2.7.x.
 
 ## History
 
+-  8/9/2016 v.1 Renamed some functions and variables for added clarity.
 -  8/1/2016  v.1 More documentation added.
 -  7/29/2016 v.1 Additional documentation added.
 -  7/23/2016 v.1 iPython worksheet added.

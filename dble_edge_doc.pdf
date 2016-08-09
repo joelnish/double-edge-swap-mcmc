@@ -10,11 +10,11 @@ endobj
 << /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >>
 endobj
 4 0 obj
-<< /Contents 95 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 96 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 5 0 obj
-<< /Contents 96 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 97 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 6 0 obj
@@ -48,7 +48,7 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Rect [ 549.6998 682.7894 555.2598 694.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 16 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 80.01575 664.0394 237.8357 676.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 80.01575 664.0394 270.6257 676.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 17 0 obj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 549.6998 664.7894 555.2598 676.7894 ] /Subtype /Link /Type /Annot >>
@@ -96,32 +96,32 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 40.01575 321.0394 0 ] /Rect [ 549.6998 538.7894 555.2598 550.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 32 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 520.0394 66.13575 532.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 520.0394 66.13575 532.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 33 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 520.7894 555.2598 532.7894 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 520.7894 555.2598 532.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 34 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 502.0394 140.5857 514.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 502.0394 140.5857 514.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 35 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 502.7894 555.2598 514.7894 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 502.7894 555.2598 514.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 36 0 obj
 << /Annots [ 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 
   16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 
-  26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R ] /Contents 97 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+  26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R ] /Contents 98 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 37 0 obj
-<< /Contents 98 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 99 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 38 0 obj
 << /BaseFont /Helvetica-BoldOblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font >>
 endobj
 39 0 obj
-<< /Contents 99 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 100 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 40 0 obj
@@ -137,32 +137,32 @@ endobj
 << /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F6 /Subtype /Type1 /Type /Font >>
 endobj
 44 0 obj
-<< /Annots [ 42 0 R ] /Contents 100 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 42 0 R ] /Contents 101 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 45 0 obj
-<< /A << /S /URI /Type /Action /URI (mailto:'@jit) >> /Border [ 0 0 0 ] /Rect [ 159.0066 409.0394 178.2866 421.0394 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (mailto:'@nb.jit) >> /Border [ 0 0 0 ] /Rect [ 156.0281 409.0394 189.2081 421.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 46 0 obj
-<< /A << /S /URI /Type /Action /URI (mailto:'@nb.jit) >> /Border [ 0 0 0 ] /Rect [ 156.0281 217.0394 189.2081 229.0394 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (mailto:'@jit) >> /Border [ 0 0 0 ] /Rect [ 159.0066 217.0394 178.2866 229.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 47 0 obj
-<< /Annots [ 45 0 R 46 0 R ] /Contents 101 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 45 0 R 46 0 R ] /Contents 102 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 48 0 obj
 << /A << /S /URI /Type /Action /URI (http://jeffe.cs.illinois.edu/compgeom/biblios.html) >> /Border [ 0 0 0 ] /Rect [ 337.9598 251.8394 549.1498 263.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 49 0 obj
-<< /Annots [ 48 0 R ] /Contents 102 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 48 0 R ] /Contents 103 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 50 0 obj
-<< /Contents 103 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 104 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 51 0 obj
-<< /Contents 104 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 105 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 52 0 obj
@@ -181,128 +181,131 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 189.0394 0 ] /Rect [ 40.01575 593.8394 233.9757 605.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 57 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 545.4394 272.8557 557.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 517.8394 0 ] /Rect [ 40.01575 545.4394 264.5257 557.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 58 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 517.8394 0 ] /Rect [ 40.01575 497.0394 264.5257 509.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 50.01575 139.8394 0 ] /Rect [ 40.01575 497.0394 218.3757 509.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 59 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 50.01575 139.8394 0 ] /Rect [ 40.01575 448.6394 218.3757 460.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 479.0394 248.9657 491.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 60 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 430.6394 224.5057 442.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 375.0394 0 ] /Rect [ 40.01575 461.0394 257.2957 473.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 61 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 375.0394 0 ] /Rect [ 40.01575 412.6394 248.9657 424.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 717.0394 0 ] /Rect [ 40.01575 412.6394 210.6157 424.6394 ] /Subtype /Link /Type /Annot >>
 endobj
 62 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 717.0394 0 ] /Rect [ 40.01575 364.2394 210.6157 376.2394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 475.8394 0 ] /Rect [ 40.01575 364.2394 270.6057 376.2394 ] /Subtype /Link /Type /Annot >>
 endobj
 63 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 475.8394 0 ] /Rect [ 40.01575 315.8394 270.6057 327.8394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 763.8394 0 ] /Rect [ 40.01575 315.8394 172.8257 327.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 64 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 763.8394 0 ] /Rect [ 40.01575 267.4394 172.8257 279.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 301.8394 0 ] /Rect [ 40.01575 297.8394 277.8557 309.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 65 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 301.8394 0 ] /Rect [ 40.01575 249.4394 277.8557 261.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 279.8394 280.0957 291.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 66 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 201.0394 232.8457 213.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 267.8394 76.69575 279.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 67 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 405.0394 0 ] /Rect [ 40.01575 183.0394 281.7657 195.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 219.4394 232.8457 231.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 68 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 363.0394 0 ] /Rect [ 40.01575 165.0394 252.1156 177.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 405.0394 0 ] /Rect [ 40.01575 201.4394 281.7657 213.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 69 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 363.0394 0 ] /Rect [ 40.01575 153.0394 112.2557 165.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 363.0394 0 ] /Rect [ 40.01575 183.4394 252.1156 195.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 70 0 obj
-<< /Annots [ 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 
-  62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R ] /Contents 105 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
-  /Trans <<  >> /Type /Page >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 363.0394 0 ] /Rect [ 40.01575 171.4394 112.2557 183.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 71 0 obj
-<< /Contents 106 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
-  /Type /Page >>
-endobj
-72 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 40.01575 250.2394 0 ] /Rect [ 40.01575 726.6394 113.3757 738.6394 ] /Subtype /Link /Type /Annot >>
-endobj
-73 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 227.0394 0 ] /Rect [ 40.01575 708.6394 108.9257 720.6394 ] /Subtype /Link /Type /Annot >>
-endobj
-74 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 790.2394 0 ] /Rect [ 40.01575 660.2394 130.5957 672.2394 ] /Subtype /Link /Type /Annot >>
-endobj
-75 0 obj
-<< /Annots [ 72 0 R 73 0 R 74 0 R ] /Contents 107 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 
+  62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R 70 0 R ] /Contents 106 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
+72 0 obj
+<< /Contents 107 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+73 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 40.01575 250.2394 0 ] /Rect [ 40.01575 726.6394 113.3757 738.6394 ] /Subtype /Link /Type /Annot >>
+endobj
+74 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 227.0394 0 ] /Rect [ 40.01575 708.6394 108.9257 720.6394 ] /Subtype /Link /Type /Annot >>
+endobj
+75 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 790.2394 0 ] /Rect [ 40.01575 660.2394 130.5957 672.2394 ] /Subtype /Link /Type /Annot >>
+endobj
 76 0 obj
-<< /Outlines 78 0 R /PageLabels 108 0 R /PageMode /UseNone /Pages 94 0 R /Type /Catalog >>
+<< /Annots [ 73 0 R 74 0 R 75 0 R ] /Contents 108 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+  /Trans <<  >> /Type /Page >>
 endobj
 77 0 obj
-<< /Author () /CreationDate <rst2pdf.createpdf.PDFDate instance at 0x00000000082FDEC8> /Creator (\(unspecified\)) /Keywords () /ModDate <rst2pdf.createpdf.PDFDate instance at 0x00000000082FDEC8> /Producer (ReportLab PDF Library - www.reportlab.com) 
-  /Subject (\(unspecified\)) /Title () /Trapped /False >>
+<< /Outlines 79 0 R /PageLabels 109 0 R /PageMode /UseNone /Pages 95 0 R /Type /Catalog >>
 endobj
 78 0 obj
-<< /Count 17 /First 79 0 R /Last 93 0 R /Type /Outlines >>
+<< /Author () /CreationDate <rst2pdf.createpdf.PDFDate instance at 0x0000000006E61E08> /Creator (\(unspecified\)) /Keywords () /ModDate <rst2pdf.createpdf.PDFDate instance at 0x0000000006E61E08> /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title () /Trapped /False >>
 endobj
 79 0 obj
-<< /Count 11 /Dest [ 39 0 R /XYZ 40.01575 787.0394 0 ] /First 80 0 R /Last 90 0 R /Next 91 0 R /Parent 78 0 R 
-  /Title (dbl_edge_mcmc documentation) >>
+<< /Count 17 /First 80 0 R /Last 94 0 R /Type /Outlines >>
 endobj
 80 0 obj
-<< /Count 7 /Dest [ 39 0 R /XYZ 40.01575 747.0394 0 ] /First 81 0 R /Last 87 0 R /Next 88 0 R /Parent 79 0 R 
-  /Title (Overview) >>
+<< /Count 11 /Dest [ 39 0 R /XYZ 40.01575 787.0394 0 ] /First 81 0 R /Last 91 0 R /Next 92 0 R /Parent 79 0 R 
+  /Title (dbl_edge_mcmc documentation) >>
 endobj
 81 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 711.8394 0 ] /Next 82 0 R /Parent 80 0 R /Title (About) >>
+<< /Count 7 /Dest [ 39 0 R /XYZ 40.01575 747.0394 0 ] /First 82 0 R /Last 88 0 R /Next 89 0 R /Parent 80 0 R 
+  /Title (Overview) >>
 endobj
 82 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 553.0394 0 ] /Next 83 0 R /Parent 80 0 R /Prev 81 0 R /Title (Package Contents) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 711.8394 0 ] /Next 83 0 R /Parent 81 0 R /Title (About) >>
 endobj
 83 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Next 84 0 R /Parent 80 0 R /Prev 82 0 R /Title (Taking MCMC steps) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 553.0394 0 ] /Next 84 0 R /Parent 81 0 R /Prev 82 0 R /Title (Package Contents) >>
 endobj
 84 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Next 85 0 R /Parent 80 0 R /Prev 83 0 R /Title (MCMC_step and MCMC_step_stub) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Next 85 0 R /Parent 81 0 R /Prev 83 0 R /Title (Taking MCMC steps) >>
 endobj
 85 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 630.2394 0 ] /Next 86 0 R /Parent 80 0 R /Prev 84 0 R /Title (MCMC_class) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Next 86 0 R /Parent 81 0 R /Prev 84 0 R /Title (MCMC_step_vertex and MCMC_step_stub) >>
 endobj
 86 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 444.6394 0 ] /Next 87 0 R /Parent 80 0 R /Prev 85 0 R /Title (Notes) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 630.2394 0 ] /Next 87 0 R /Parent 81 0 R /Prev 85 0 R /Title (MCMC_class) >>
 endobj
 87 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 309.8394 0 ] /Parent 80 0 R /Prev 86 0 R /Title (References) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 444.6394 0 ] /Next 88 0 R /Parent 81 0 R /Prev 86 0 R /Title (Notes) >>
 endobj
 88 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 247.0394 0 ] /Next 89 0 R /Parent 79 0 R /Prev 80 0 R /Title (dbl_edge_mcmc.py) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 309.8394 0 ] /Parent 81 0 R /Prev 87 0 R /Title (References) >>
 endobj
 89 0 obj
-<< /Dest [ 49 0 R /XYZ 40.01575 787.0394 0 ] /Next 90 0 R /Parent 79 0 R /Prev 88 0 R /Title (sample_assortativity.py) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 247.0394 0 ] /Next 90 0 R /Parent 80 0 R /Prev 81 0 R /Title (dbl_edge_mcmc.py) >>
 endobj
 90 0 obj
-<< /Dest [ 49 0 R /XYZ 40.01575 223.8394 0 ] /Parent 79 0 R /Prev 89 0 R /Title (dist_verification.py) >>
+<< /Dest [ 49 0 R /XYZ 40.01575 787.0394 0 ] /Next 91 0 R /Parent 80 0 R /Prev 89 0 R /Title (sample_assortativity.py) >>
 endobj
 91 0 obj
-<< /Dest [ 50 0 R /XYZ 40.01575 321.0394 0 ] /Next 92 0 R /Parent 78 0 R /Prev 79 0 R /Title (Indices) >>
+<< /Dest [ 49 0 R /XYZ 40.01575 223.8394 0 ] /Parent 80 0 R /Prev 90 0 R /Title (dist_verification.py) >>
 endobj
 92 0 obj
-<< /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Next 93 0 R /Parent 78 0 R /Prev 91 0 R /Title (Index) >>
+<< /Dest [ 50 0 R /XYZ 40.01575 321.0394 0 ] /Next 93 0 R /Parent 79 0 R /Prev 80 0 R /Title (Indices) >>
 endobj
 93 0 obj
-<< /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Parent 78 0 R /Prev 92 0 R /Title (Python Module Index) >>
+<< /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Next 94 0 R /Parent 79 0 R /Prev 92 0 R /Title (Index) >>
 endobj
 94 0 obj
-<< /Count 13 /Kids [ 4 0 R 5 0 R 36 0 R 37 0 R 39 0 R 44 0 R 47 0 R 49 0 R 50 0 R 51 0 R 
-  70 0 R 71 0 R 75 0 R ] /Type /Pages >>
+<< /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Parent 79 0 R /Prev 93 0 R /Title (Python Module Index) >>
 endobj
 95 0 obj
+<< /Count 13 /Kids [ 4 0 R 5 0 R 36 0 R 37 0 R 39 0 R 44 0 R 47 0 R 49 0 R 50 0 R 51 0 R 
+  71 0 R 72 0 R 76 0 R ] /Type /Pages >>
+endobj
+96 0 obj
 << /Length 995 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -349,7 +352,7 @@ q
 1 0 0 1 40.01575 524.1606 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2.4 Tm /F1 12 Tf 14.4 TL 213.924 0 Td (August 02, 2016) Tj T* -213.924 0 Td ET
+BT 1 0 0 1 0 2.4 Tm /F1 12 Tf 14.4 TL 213.924 0 Td (August 09, 2016) Tj T* -213.924 0 Td ET
 Q
 Q
 q
@@ -361,7 +364,7 @@ Q
  
 endstream
 endobj
-96 0 obj
+97 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -371,8 +374,8 @@ Q
  
 endstream
 endobj
-97 0 obj
-<< /Length 4084 >>
+98 0 obj
+<< /Length 4091 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -464,7 +467,7 @@ Q
 q
 1 0 0 1 0 165 cm
 q
-BT 1 0 0 1 40 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step and MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 40 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_vertex and MCMC_step_stub) Tj T* ET
 Q
 Q
 q
@@ -613,7 +616,7 @@ Q
  
 endstream
 endobj
-98 0 obj
+99 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -623,8 +626,8 @@ Q
  
 endstream
 endobj
-99 0 obj
-<< /Length 7940 >>
+100 0 obj
+<< /Length 7960 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -884,7 +887,7 @@ q
 1 0 0 1 40.01575 167.4394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL 4.44894 Tw (There are two primary ways to utilize this module, either though providing and maintaining a networkx) Tj T* 0 Tw .100241 Tw (graph/multigraph object as in MCMC_class, or by providing and maintaining an adjacency matrix and an edge list as) Tj T* 0 Tw .592131 Tw (in the functions MCMC_step_stub and MCMC_step. In either approach it is necessary to specify the desired graph) Tj T* 0 Tw 1.145535 Tw (space by stating whether self-loops and/or multiedges are allowed as well deciding whether the graph is stub- or) Tj T* 0 Tw (vertex-labeled.) Tj T* ET
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL 4.44894 Tw (There are two primary ways to utilize this module, either though providing and maintaining a networkx) Tj T* 0 Tw .100241 Tw (graph/multigraph object as in MCMC_class, or by providing and maintaining an adjacency matrix and an edge list as) Tj T* 0 Tw .335606 Tw (in the functions MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify the desired) Tj T* 0 Tw .164358 Tw (graph space by stating whether self-loops and/or multiedges are allowed as well deciding whether the graph is stub-) Tj T* 0 Tw (or vertex-labeled.) Tj T* ET
 Q
 Q
 q
@@ -896,14 +899,14 @@ q
 n -10 0 525.2441 22.8 re B*
 Q
 q
-BT 1 0 0 1 0 2.8 Tm 16.8 TL /F3 14 Tf .12549 .262745 .360784 rg (MCMC_step and MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm 16.8 TL /F3 14 Tf .12549 .262745 .360784 rg (MCMC_step_vertex and MCMC_step_stub) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 80.63937 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 3.230409 Tw (Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and vertex-labeled \(respectively\)) Tj T* 0 Tw .524116 Tw (double edge swap and correspond to Algorithms 1 and 3 in the accompanying paper. These functions modify a full) Tj T* 0 Tw .333705 Tw (\(non-sparse\) graph adjacency matrix, a list of edges, and a length 4 list, all in place. Both take the same arguments) Tj T* 0 Tw (\(as detailed below\). Consider the following example.) Tj T* ET
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 6.860455 Tw (Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and vertex-labeled) Tj T* 0 Tw .208381 Tw (\(respectively\) double edge swap and correspond to Algorithms 1 and 3 in the accompanying paper. These functions) Tj T* 0 Tw .025641 Tw (modify a full \(non-sparse\) graph adjacency matrix, a list of edges, and a length 4 list, all in place. Both take the same) Tj T* 0 Tw (arguments \(as detailed below\). Consider the following example.) Tj T* ET
 Q
 Q
 q
@@ -923,8 +926,8 @@ Q
  
 endstream
 endobj
-100 0 obj
-<< /Length 14875 >>
+101 0 obj
+<< /Length 14949 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1079,22 +1082,22 @@ n 174 0 30 12 re f*
 .933333 1 .8 rg
 n 204 0 6 12 re f*
 .933333 1 .8 rg
-n 216 0 30 12 re f*
-.933333 1 .8 rg
-n 252 0 6 12 re f*
-.933333 1 .8 rg
-n 264 0 24 12 re f*
+n 216 0 66 12 re f*
 .933333 1 .8 rg
 n 288 0 6 12 re f*
 .933333 1 .8 rg
-n 300 0 30 12 re f*
+n 300 0 24 12 re f*
 .933333 1 .8 rg
-n 336 0 6 12 re f*
+n 324 0 6 12 re f*
 .933333 1 .8 rg
-n 348 0 24 12 re f*
+n 336 0 66 12 re f*
 .933333 1 .8 rg
-n 372 0 6 12 re f*
-BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (numpy) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (np) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (A) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg ( ) Tj 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (edge_list) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (swaps) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg ([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (]) Tj 0 0 0 rg  T* 0 0 0 rg (MCMC_step_stub) Tj 0 0 0 rg (\() Tj 0 0 0 rg (A) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (edge_list) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (swaps) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (\)) Tj T* ET
+n 408 0 6 12 re f*
+.933333 1 .8 rg
+n 420 0 24 12 re f*
+.933333 1 .8 rg
+n 444 0 6 12 re f*
+BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (numpy) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (np) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (A) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg ( ) Tj 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (edge_list) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (swaps) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg ([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (]) Tj 0 0 0 rg  T* 0 0 0 rg (MCMC_step_stub) Tj 0 0 0 rg (\() Tj 0 0 0 rg (A) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (edge_list) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (swaps) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
@@ -1130,7 +1133,7 @@ q
 1 0 0 1 40.01575 571.4394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 1.407888 Tw (The MCMC_class is initialized with a Networkx graph, along with the three choices that define the graph space.) Tj T* 0 Tw .413606 Tw (Calling the class function 'get_graph' advances the Markov chain and returns the current Networkx graph. Consider) Tj T* 0 Tw (the following example.) Tj T* ET
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 1.407888 Tw (The MCMC_class is initialized with a Networkx graph, along with the three choices that define the graph space.) Tj T* 0 Tw .163864 Tw (Calling the class function 'step_and_get_graph' advances the Markov chain and returns the current Networkx graph.) Tj T* 0 Tw (Consider the following example.) Tj T* ET
 Q
 Q
 q
@@ -1207,29 +1210,29 @@ n 96 12 6 12 re f*
 .933333 1 .8 rg
 n 102 12 6 12 re f*
 .933333 1 .8 rg
-n 114 12 30 12 re f*
-.933333 1 .8 rg
-n 150 12 6 12 re f*
-.933333 1 .8 rg
-n 162 12 24 12 re f*
+n 114 12 66 12 re f*
 .933333 1 .8 rg
 n 186 12 6 12 re f*
 .933333 1 .8 rg
-n 198 12 30 12 re f*
+n 198 12 24 12 re f*
 .933333 1 .8 rg
-n 234 12 6 12 re f*
+n 222 12 6 12 re f*
 .933333 1 .8 rg
-n 246 12 24 12 re f*
+n 234 12 66 12 re f*
 .933333 1 .8 rg
-n 270 12 6 12 re f*
+n 306 12 6 12 re f*
 .933333 1 .8 rg
-n 282 12 54 12 re f*
+n 318 12 24 12 re f*
 .933333 1 .8 rg
 n 342 12 6 12 re f*
 .933333 1 .8 rg
-n 354 12 30 12 re f*
+n 354 12 72 12 re f*
 .933333 1 .8 rg
-n 384 12 6 12 re f*
+n 432 12 6 12 re f*
+.933333 1 .8 rg
+n 444 12 30 12 re f*
+.933333 1 .8 rg
+n 474 12 6 12 re f*
 .933333 1 .8 rg
 n 0 0 12 12 re f*
 .933333 1 .8 rg
@@ -1239,10 +1242,10 @@ n 30 0 12 12 re f*
 .933333 1 .8 rg
 n 42 0 6 12 re f*
 .933333 1 .8 rg
-n 48 0 54 12 re f*
+n 48 0 108 12 re f*
 .933333 1 .8 rg
-n 102 0 12 12 re f*
-BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (networkx) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (nx) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (G) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (nx) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (Graph) Tj 0 0 0 rg (\(\)) Tj 0 0 0 rg  T* 0 0 0 rg (G) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (add_path) Tj 0 0 0 rg (\([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (3) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (4) Tj /F5 10 Tf 0 0 0 rg (]\)) Tj 0 0 0 rg  T* 0 0 0 rg (MC) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MCMC_class) Tj 0 0 0 rg (\() Tj 0 0 0 rg (G) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (v_labeled) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (False) Tj 0 0 0 rg (\)) Tj 0 0 0 rg  T* 0 0 0 rg (G2) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MC) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (get_graph) Tj 0 0 0 rg (\(\)) Tj T* ET
+n 156 0 12 12 re f*
+BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (networkx) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (nx) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (G) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (nx) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (Graph) Tj 0 0 0 rg (\(\)) Tj 0 0 0 rg  T* 0 0 0 rg (G) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (add_path) Tj 0 0 0 rg (\([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (3) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (4) Tj /F5 10 Tf 0 0 0 rg (]\)) Tj 0 0 0 rg  T* 0 0 0 rg (MC) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MCMC_class) Tj 0 0 0 rg (\() Tj 0 0 0 rg (G) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (is_v_labeled) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (False) Tj 0 0 0 rg (\)) Tj 0 0 0 rg  T* 0 0 0 rg (G2) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MC) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (step_and_get_graph) Tj 0 0 0 rg (\(\)) Tj T* ET
 Q
 Q
 Q
@@ -1271,7 +1274,7 @@ q
 1 0 0 1 40.01575 397.8394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 2.357238 Tw (In general, directly calling MCMC_step or MCMC_step_stub is faster than using MCMC_class, since updating) Tj T* 0 Tw (Networkx data structures doesn't benefit from numba acceleration.) Tj T* ET
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 3.249508 Tw (In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than using MCMC_class, since) Tj T* 0 Tw (updating Networkx data structures doesn't benefit from numba acceleration.) Tj T* ET
 Q
 Q
 q
@@ -1344,7 +1347,7 @@ Q
 q
 1 0 0 1 40.01575 137.8394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F6 10 Tf 0 0 0 rg (class ) Tj /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_class ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F6 10 Tf 0 0 0 rg (class ) Tj /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_class ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -1374,7 +1377,7 @@ q
 1 0 0 1 50.01575 59.83937 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -1394,22 +1397,22 @@ Q
  
 endstream
 endobj
-101 0 obj
-<< /Length 8548 >>
+102 0 obj
+<< /Length 8621 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
 1 0 0 1 50.01575 775.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 763.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (v_labeled \(bool\): True only if the graph space is vertex-labeled. True by default.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (is_v_labeled \(bool\): True only if the graph space is vertex-labeled. True by default.) Tj T* ET
 Q
 Q
 q
@@ -1448,7 +1451,7 @@ Q
 q
 1 0 0 1 50.01575 685.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (get_graph ) Tj /F2 10 Tf 0 0 0 rg (\(\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (step_and_get_graph ) Tj /F2 10 Tf 0 0 0 rg (\(\)) Tj T* ET
 Q
 Q
 q
@@ -1510,13 +1513,13 @@ Q
 q
 1 0 0 1 40.01575 565.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_stub) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 553.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a vertex-labeled double edge swap.) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a stub-labeled double edge swap.) Tj T* ET
 Q
 Q
 q
@@ -1554,14 +1557,14 @@ q
 1 0 0 1 50.01575 475.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 463.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -1590,7 +1593,7 @@ Q
 q
 1 0 0 1 50.01575 397.0394 cm
 q
-BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 3.170292 Tw (requires removing the ) Tj 0 0 .501961 rg ('@jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
+BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 2.177435 Tw (requires removing the ) Tj 0 0 .501961 rg ('@nb.jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
 Q
 Q
 q
@@ -1599,13 +1602,13 @@ Q
 q
 1 0 0 1 40.01575 373.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_vertex) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 361.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a stub-labeled double edge swap.) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a vertex-labeled double edge swap.) Tj T* ET
 Q
 Q
 q
@@ -1643,14 +1646,14 @@ q
 1 0 0 1 50.01575 283.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 271.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -1679,7 +1682,7 @@ Q
 q
 1 0 0 1 50.01575 205.0394 cm
 q
-BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 2.177435 Tw (requires removing the ) Tj 0 0 .501961 rg ('@nb.jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
+BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 3.170292 Tw (requires removing the ) Tj 0 0 .501961 rg ('@jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
 Q
 Q
 q
@@ -1688,7 +1691,7 @@ Q
 q
 1 0 0 1 40.01575 187.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (flatten_graph ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (graph) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (flatten_graph ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (graph) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -1718,14 +1721,14 @@ q
 1 0 0 1 50.01575 133.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops are allowed in output graph.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops are allowed in output graph.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 121.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in output graph.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in output graph.) Tj T* ET
 Q
 Q
 q
@@ -1768,8 +1771,8 @@ Q
  
 endstream
 endobj
-102 0 obj
-<< /Length 8571 >>
+103 0 obj
+<< /Length 8598 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -1901,7 +1904,7 @@ Q
 q
 1 0 0 1 40.01575 473.8394 cm
 q
-BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (sample_assortativity.) Tj /F4 10 Tf 0 0 0 rg (r_sample_MCMC ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (v_uniform=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=10000) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (n_recs=100) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (filename='temp') Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (sample_assortativity.) Tj /F4 10 Tf 0 0 0 rg (r_sample_MCMC ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (its=10000) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (n_recs=100) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (filename='temp') Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -1931,14 +1934,14 @@ q
 1 0 0 1 50.01575 407.8394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 395.8394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -2094,8 +2097,8 @@ Q
  
 endstream
 endobj
-103 0 obj
-<< /Length 7332 >>
+104 0 obj
+<< /Length 7324 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -2210,7 +2213,7 @@ Q
 q
 1 0 0 1 40.01575 565.0394 cm
 q
-BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (dist_verification.) Tj /F4 10 Tf 0 0 0 rg (test_sampling ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (self_loops=False) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi_edges=False) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (sample_uniformly=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=100000) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (dist_verification.) Tj /F4 10 Tf 0 0 0 rg (test_sampling ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (self_loops=False) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi_edges=False) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=100000) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -2254,7 +2257,7 @@ q
 1 0 0 1 50.01575 487.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sample_uniformly \(bool\): True if the space is vertex labeled, False for stub-labeled.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (is_v_labeled \(bool\): True if the space is vertex labeled, False for stub-labeled.) Tj T* ET
 Q
 Q
 q
@@ -2433,7 +2436,7 @@ Q
  
 endstream
 endobj
-104 0 obj
+105 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -2443,8 +2446,8 @@ Q
  
 endstream
 endobj
-105 0 obj
-<< /Length 4889 >>
+106 0 obj
+<< /Length 4731 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -2538,13 +2541,13 @@ n -10 0 256.3496 20.4 re B*
 Q
 q
 .12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (G) Tj T* ET
+BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (L) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 545.4394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (get_graph\(\) \(dbl_edge_mcmc.MCMC_class method\)) Tj  T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (load_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
@@ -2557,48 +2560,29 @@ n -10 0 256.3496 20.4 re B*
 Q
 q
 .12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (L) Tj T* ET
+BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (M) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 497.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (load_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 466.6394 cm
-q
-.8 .8 .8 RG
-.3 w
-.94902 .94902 .94902 rg
-n -10 0 256.3496 20.4 re B*
-Q
-q
-.12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (M) Tj T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 448.6394 cm
-q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_class \(class in dbl_edge_mcmc\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 430.6394 cm
-q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step \(in module dbl_edge_mcmc\)) Tj  T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 412.6394 cm
+1 0 0 1 40.01575 479.0394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_stub \(in module dbl_edge_mcmc\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 382.2394 cm
+1 0 0 1 40.01575 461.0394 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_vertex \(in module dbl_edge_mcmc\)) Tj  T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 430.6394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -2611,13 +2595,13 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (P) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 364.2394 cm
+1 0 0 1 40.01575 412.6394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (plot_vals\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 333.8394 cm
+1 0 0 1 40.01575 382.2394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -2630,13 +2614,13 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (R) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 315.8394 cm
+1 0 0 1 40.01575 364.2394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (r_sample_MCMC\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 285.4394 cm
+1 0 0 1 40.01575 333.8394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -2649,19 +2633,25 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (S) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 267.4394 cm
+1 0 0 1 40.01575 315.8394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (sample_assortativity \(module\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 249.4394 cm
+1 0 0 1 40.01575 297.8394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (sample_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 219.0394 cm
+1 0 0 1 40.01575 267.8394 cm
+q
+BT 1 0 0 1 0 14 Tm 6.269606 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (step_and_get_graph\(\) \(dbl_edge_mcmc.MCMC_class) Tj T* 0 Tw (method\)) Tj  T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 237.4394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -2674,33 +2664,33 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (T) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 201.0394 cm
+1 0 0 1 40.01575 219.4394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 183.0394 cm
+1 0 0 1 40.01575 201.4394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling_five_node\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 q
 BT 1 0 0 1 0 14 Tm 34.2498 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling_seven_node\(\) \(in module) Tj T* 0 Tw (dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 Q
  
 endstream
 endobj
-106 0 obj
+107 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -2710,7 +2700,7 @@ Q
  
 endstream
 endobj
-107 0 obj
+108 0 obj
 << /Length 1056 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -2776,52 +2766,52 @@ Q
  
 endstream
 endobj
-108 0 obj
-<< /Nums [ 0 109 0 R 1 110 0 R 2 111 0 R 3 112 0 R 4 113 0 R 
-  5 114 0 R 6 115 0 R 7 116 0 R 8 117 0 R 9 118 0 R 
-  10 119 0 R 11 120 0 R 12 121 0 R ] >>
-endobj
 109 0 obj
-<< /S /D /St 1 >>
+<< /Nums [ 0 110 0 R 1 111 0 R 2 112 0 R 3 113 0 R 4 114 0 R 
+  5 115 0 R 6 116 0 R 7 117 0 R 8 118 0 R 9 119 0 R 
+  10 120 0 R 11 121 0 R 12 122 0 R ] >>
 endobj
 110 0 obj
-<< /S /D /St 2 >>
-endobj
-111 0 obj
-<< /S /r /St 1 >>
-endobj
-112 0 obj
-<< /S /r /St 2 >>
-endobj
-113 0 obj
 << /S /D /St 1 >>
 endobj
-114 0 obj
+111 0 obj
 << /S /D /St 2 >>
 endobj
+112 0 obj
+<< /S /r /St 1 >>
+endobj
+113 0 obj
+<< /S /r /St 2 >>
+endobj
+114 0 obj
+<< /S /D /St 1 >>
+endobj
 115 0 obj
-<< /S /D /St 3 >>
+<< /S /D /St 2 >>
 endobj
 116 0 obj
-<< /S /D /St 4 >>
+<< /S /D /St 3 >>
 endobj
 117 0 obj
-<< /S /D /St 5 >>
+<< /S /D /St 4 >>
 endobj
 118 0 obj
-<< /S /D /St 6 >>
+<< /S /D /St 5 >>
 endobj
 119 0 obj
-<< /S /D /St 7 >>
+<< /S /D /St 6 >>
 endobj
 120 0 obj
-<< /S /D /St 8 >>
+<< /S /D /St 7 >>
 endobj
 121 0 obj
+<< /S /D /St 8 >>
+endobj
+122 0 obj
 << /S /D /St 9 >>
 endobj
 xref
-0 122
+0 123
 0000000000 65535 f
 0000000075 00000 n
 0000000163 00000 n
@@ -2862,95 +2852,96 @@ xref
 0000006398 00000 n
 0000006608 00000 n
 0000006731 00000 n
-0000006941 00000 n
-0000007055 00000 n
-0000007164 00000 n
-0000007335 00000 n
-0000007454 00000 n
-0000007684 00000 n
-0000007852 00000 n
-0000008023 00000 n
-0000008260 00000 n
-0000008466 00000 n
-0000008696 00000 n
-0000008907 00000 n
-0000009118 00000 n
-0000009290 00000 n
-0000009462 00000 n
-0000009634 00000 n
-0000009806 00000 n
-0000009978 00000 n
-0000010150 00000 n
-0000010322 00000 n
-0000010494 00000 n
-0000010666 00000 n
-0000010838 00000 n
-0000011010 00000 n
-0000011182 00000 n
-0000011354 00000 n
-0000011526 00000 n
-0000011698 00000 n
-0000011870 00000 n
-0000012042 00000 n
-0000012214 00000 n
-0000012567 00000 n
-0000012778 00000 n
-0000012950 00000 n
-0000013122 00000 n
-0000013294 00000 n
-0000013538 00000 n
-0000013648 00000 n
-0000013976 00000 n
-0000014054 00000 n
-0000014227 00000 n
-0000014380 00000 n
-0000014490 00000 n
-0000014624 00000 n
-0000014759 00000 n
-0000014905 00000 n
-0000015033 00000 n
-0000015156 00000 n
-0000015271 00000 n
-0000015405 00000 n
-0000015546 00000 n
-0000015671 00000 n
-0000015796 00000 n
-0000015919 00000 n
-0000016043 00000 n
-0000016194 00000 n
-0000017245 00000 n
-0000017380 00000 n
-0000021521 00000 n
-0000021656 00000 n
-0000029653 00000 n
-0000044587 00000 n
-0000053193 00000 n
-0000061822 00000 n
-0000069212 00000 n
-0000069348 00000 n
-0000074295 00000 n
-0000074431 00000 n
-0000075545 00000 n
-0000075722 00000 n
-0000075760 00000 n
-0000075798 00000 n
-0000075836 00000 n
-0000075874 00000 n
-0000075912 00000 n
-0000075950 00000 n
-0000075988 00000 n
-0000076026 00000 n
-0000076064 00000 n
-0000076102 00000 n
-0000076140 00000 n
-0000076178 00000 n
+0000006942 00000 n
+0000007056 00000 n
+0000007165 00000 n
+0000007336 00000 n
+0000007455 00000 n
+0000007685 00000 n
+0000007856 00000 n
+0000008024 00000 n
+0000008261 00000 n
+0000008467 00000 n
+0000008697 00000 n
+0000008908 00000 n
+0000009119 00000 n
+0000009291 00000 n
+0000009463 00000 n
+0000009635 00000 n
+0000009807 00000 n
+0000009979 00000 n
+0000010151 00000 n
+0000010323 00000 n
+0000010495 00000 n
+0000010667 00000 n
+0000010839 00000 n
+0000011011 00000 n
+0000011183 00000 n
+0000011355 00000 n
+0000011527 00000 n
+0000011699 00000 n
+0000011871 00000 n
+0000012043 00000 n
+0000012215 00000 n
+0000012387 00000 n
+0000012747 00000 n
+0000012958 00000 n
+0000013130 00000 n
+0000013302 00000 n
+0000013474 00000 n
+0000013718 00000 n
+0000013828 00000 n
+0000014156 00000 n
+0000014234 00000 n
+0000014407 00000 n
+0000014560 00000 n
+0000014670 00000 n
+0000014804 00000 n
+0000014939 00000 n
+0000015092 00000 n
+0000015220 00000 n
+0000015343 00000 n
+0000015458 00000 n
+0000015592 00000 n
+0000015733 00000 n
+0000015858 00000 n
+0000015983 00000 n
+0000016106 00000 n
+0000016230 00000 n
+0000016381 00000 n
+0000017432 00000 n
+0000017567 00000 n
+0000021715 00000 n
+0000021850 00000 n
+0000029868 00000 n
+0000044876 00000 n
+0000053555 00000 n
+0000062211 00000 n
+0000069593 00000 n
+0000069729 00000 n
+0000074518 00000 n
+0000074654 00000 n
+0000075768 00000 n
+0000075945 00000 n
+0000075983 00000 n
+0000076021 00000 n
+0000076059 00000 n
+0000076097 00000 n
+0000076135 00000 n
+0000076173 00000 n
+0000076211 00000 n
+0000076249 00000 n
+0000076287 00000 n
+0000076325 00000 n
+0000076363 00000 n
+0000076401 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com)
  [(-\270/\215\023\374\232\255\017j\310\301DYu\363) (-\270/\215\023\374\232\255\017j\310\301DYu\363)]
- /Info 77 0 R /Root 76 0 R /Size 122 >>
+ /Info 78 0 R /Root 77 0 R /Size 123 >>
 startxref
-76216
+76439
 %%EOF
 %PDF-1.4
 %“Œ‹ž ReportLab Generated PDF document http://www.reportlab.com
@@ -2964,11 +2955,11 @@ endobj
 << /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font >>
 endobj
 4 0 obj
-<< /Contents 95 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 96 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 5 0 obj
-<< /Contents 96 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 97 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 6 0 obj
@@ -3002,7 +2993,7 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Rect [ 549.6998 682.7894 555.2598 694.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 16 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 80.01575 664.0394 237.8357 676.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 80.01575 664.0394 270.6257 676.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 17 0 obj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Rect [ 549.6998 664.7894 555.2598 676.7894 ] /Subtype /Link /Type /Annot >>
@@ -3050,32 +3041,32 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 40.01575 351.0394 0 ] /Rect [ 549.6998 538.7894 555.2598 550.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 32 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 520.0394 66.13575 532.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 520.0394 66.13575 532.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 33 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 520.7894 555.2598 532.7894 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 520.7894 555.2598 532.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 34 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 502.0394 140.5857 514.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 40.01575 502.0394 140.5857 514.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 35 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 502.7894 555.2598 514.7894 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Rect [ 549.6998 502.7894 555.2598 514.7894 ] /Subtype /Link /Type /Annot >>
 endobj
 36 0 obj
 << /Annots [ 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 
   16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 
-  26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R ] /Contents 97 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+  26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R ] /Contents 98 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 37 0 obj
-<< /Contents 98 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 99 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 38 0 obj
 << /BaseFont /Helvetica-BoldOblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font >>
 endobj
 39 0 obj
-<< /Contents 99 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 100 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 40 0 obj
@@ -3091,32 +3082,32 @@ endobj
 << /BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F6 /Subtype /Type1 /Type /Font >>
 endobj
 44 0 obj
-<< /Annots [ 42 0 R ] /Contents 100 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 42 0 R ] /Contents 101 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 45 0 obj
-<< /A << /S /URI /Type /Action /URI (mailto:'@jit) >> /Border [ 0 0 0 ] /Rect [ 159.0066 409.0394 178.2866 421.0394 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (mailto:'@nb.jit) >> /Border [ 0 0 0 ] /Rect [ 156.0281 409.0394 189.2081 421.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 46 0 obj
-<< /A << /S /URI /Type /Action /URI (mailto:'@nb.jit) >> /Border [ 0 0 0 ] /Rect [ 156.0281 217.0394 189.2081 229.0394 ] /Subtype /Link /Type /Annot >>
+<< /A << /S /URI /Type /Action /URI (mailto:'@jit) >> /Border [ 0 0 0 ] /Rect [ 159.0066 217.0394 178.2866 229.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 47 0 obj
-<< /Annots [ 45 0 R 46 0 R ] /Contents 101 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 45 0 R 46 0 R ] /Contents 102 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 48 0 obj
 << /A << /S /URI /Type /Action /URI (http://jeffe.cs.illinois.edu/compgeom/biblios.html) >> /Border [ 0 0 0 ] /Rect [ 337.9598 277.0394 549.1498 289.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 49 0 obj
-<< /Annots [ 48 0 R ] /Contents 102 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 48 0 R ] /Contents 103 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
 50 0 obj
-<< /Contents 103 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 104 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 51 0 obj
-<< /Contents 104 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+<< /Contents 105 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
   /Type /Page >>
 endobj
 52 0 obj
@@ -3135,128 +3126,131 @@ endobj
 << /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 189.0394 0 ] /Rect [ 40.01575 593.8394 233.9757 605.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 57 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 545.4394 272.8557 557.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 543.0394 0 ] /Rect [ 40.01575 545.4394 264.5257 557.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 58 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 543.0394 0 ] /Rect [ 40.01575 497.0394 264.5257 509.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 50.01575 139.8394 0 ] /Rect [ 40.01575 497.0394 218.3757 509.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 59 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 50.01575 139.8394 0 ] /Rect [ 40.01575 448.6394 218.3757 460.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 479.0394 248.9657 491.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 60 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 567.0394 0 ] /Rect [ 40.01575 430.6394 224.5057 442.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 375.0394 0 ] /Rect [ 40.01575 461.0394 257.2957 473.0394 ] /Subtype /Link /Type /Annot >>
 endobj
 61 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 50.01575 375.0394 0 ] /Rect [ 40.01575 412.6394 248.9657 424.6394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 747.0394 0 ] /Rect [ 40.01575 412.6394 210.6157 424.6394 ] /Subtype /Link /Type /Annot >>
 endobj
 62 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 747.0394 0 ] /Rect [ 40.01575 364.2394 210.6157 376.2394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 501.0394 0 ] /Rect [ 40.01575 364.2394 270.6057 376.2394 ] /Subtype /Link /Type /Annot >>
 endobj
 63 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 501.0394 0 ] /Rect [ 40.01575 315.8394 270.6057 327.8394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 789.0394 0 ] /Rect [ 40.01575 315.8394 172.8257 327.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 64 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 789.0394 0 ] /Rect [ 40.01575 267.4394 172.8257 279.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 327.0394 0 ] /Rect [ 40.01575 297.8394 277.8557 309.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 65 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 50.01575 327.0394 0 ] /Rect [ 40.01575 249.4394 277.8557 261.4394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 279.8394 280.0957 291.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 66 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 597.0394 0 ] /Rect [ 40.01575 201.0394 232.8457 213.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 60.01575 687.0394 0 ] /Rect [ 40.01575 267.8394 76.69575 279.8394 ] /Subtype /Link /Type /Annot >>
 endobj
 67 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 435.0394 0 ] /Rect [ 40.01575 183.0394 281.7657 195.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 597.0394 0 ] /Rect [ 40.01575 219.4394 232.8457 231.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 68 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 393.0394 0 ] /Rect [ 40.01575 165.0394 252.1156 177.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 435.0394 0 ] /Rect [ 40.01575 201.4394 281.7657 213.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 69 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 393.0394 0 ] /Rect [ 40.01575 153.0394 112.2557 165.0394 ] /Subtype /Link /Type /Annot >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 393.0394 0 ] /Rect [ 40.01575 183.4394 252.1156 195.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 70 0 obj
-<< /Annots [ 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 
-  62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R ] /Contents 105 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
-  /Trans <<  >> /Type /Page >>
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 50 0 R /XYZ 50.01575 393.0394 0 ] /Rect [ 40.01575 171.4394 112.2557 183.4394 ] /Subtype /Link /Type /Annot >>
 endobj
 71 0 obj
-<< /Contents 106 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
-  /Type /Page >>
-endobj
-72 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 40.01575 250.2394 0 ] /Rect [ 40.01575 726.6394 113.3757 738.6394 ] /Subtype /Link /Type /Annot >>
-endobj
-73 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 252.2394 0 ] /Rect [ 40.01575 708.6394 108.9257 720.6394 ] /Subtype /Link /Type /Annot >>
-endobj
-74 0 obj
-<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 40.01575 78.23937 0 ] /Rect [ 40.01575 660.2394 130.5957 672.2394 ] /Subtype /Link /Type /Annot >>
-endobj
-75 0 obj
-<< /Annots [ 72 0 R 73 0 R 74 0 R ] /Contents 107 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 94 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+<< /Annots [ 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 
+  62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R 70 0 R ] /Contents 106 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
   /Trans <<  >> /Type /Page >>
 endobj
+72 0 obj
+<< /Contents 107 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 /Trans <<  >> 
+  /Type /Page >>
+endobj
+73 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 44 0 R /XYZ 40.01575 250.2394 0 ] /Rect [ 40.01575 726.6394 113.3757 738.6394 ] /Subtype /Link /Type /Annot >>
+endobj
+74 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 49 0 R /XYZ 40.01575 252.2394 0 ] /Rect [ 40.01575 708.6394 108.9257 720.6394 ] /Subtype /Link /Type /Annot >>
+endobj
+75 0 obj
+<< /Border [ 0 0 0 ] /Contents () /Dest [ 47 0 R /XYZ 40.01575 78.23937 0 ] /Rect [ 40.01575 660.2394 130.5957 672.2394 ] /Subtype /Link /Type /Annot >>
+endobj
 76 0 obj
-<< /Outlines 78 0 R /PageLabels 108 0 R /PageMode /UseNone /Pages 94 0 R /Type /Catalog >>
+<< /Annots [ 73 0 R 74 0 R 75 0 R ] /Contents 108 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 95 0 R /Resources << /Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ] >> /Rotate 0 
+  /Trans <<  >> /Type /Page >>
 endobj
 77 0 obj
-<< /Author () /CreationDate <rst2pdf.createpdf.PDFDate instance at 0x00000000084243C8> /Creator (\(unspecified\)) /Keywords () /ModDate <rst2pdf.createpdf.PDFDate instance at 0x00000000084243C8> /Producer (ReportLab PDF Library - www.reportlab.com) 
-  /Subject (\(unspecified\)) /Title () /Trapped /False >>
+<< /Outlines 79 0 R /PageLabels 109 0 R /PageMode /UseNone /Pages 95 0 R /Type /Catalog >>
 endobj
 78 0 obj
-<< /Count 17 /First 79 0 R /Last 93 0 R /Type /Outlines >>
+<< /Author () /CreationDate <rst2pdf.createpdf.PDFDate instance at 0x000000000879E108> /Creator (\(unspecified\)) /Keywords () /ModDate <rst2pdf.createpdf.PDFDate instance at 0x000000000879E108> /Producer (ReportLab PDF Library - www.reportlab.com) 
+  /Subject (\(unspecified\)) /Title () /Trapped /False >>
 endobj
 79 0 obj
-<< /Count 11 /Dest [ 39 0 R /XYZ 40.01575 787.0394 0 ] /First 80 0 R /Last 90 0 R /Next 91 0 R /Parent 78 0 R 
-  /Title (dbl_edge_mcmc documentation) >>
+<< /Count 17 /First 80 0 R /Last 94 0 R /Type /Outlines >>
 endobj
 80 0 obj
-<< /Count 7 /Dest [ 39 0 R /XYZ 40.01575 747.0394 0 ] /First 81 0 R /Last 87 0 R /Next 88 0 R /Parent 79 0 R 
-  /Title (Overview) >>
+<< /Count 11 /Dest [ 39 0 R /XYZ 40.01575 787.0394 0 ] /First 81 0 R /Last 91 0 R /Next 92 0 R /Parent 79 0 R 
+  /Title (dbl_edge_mcmc documentation) >>
 endobj
 81 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 711.8394 0 ] /Next 82 0 R /Parent 80 0 R /Title (About) >>
+<< /Count 7 /Dest [ 39 0 R /XYZ 40.01575 747.0394 0 ] /First 82 0 R /Last 88 0 R /Next 89 0 R /Parent 80 0 R 
+  /Title (Overview) >>
 endobj
 82 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 553.0394 0 ] /Next 83 0 R /Parent 80 0 R /Prev 81 0 R /Title (Package Contents) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 711.8394 0 ] /Next 83 0 R /Parent 81 0 R /Title (About) >>
 endobj
 83 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Next 84 0 R /Parent 80 0 R /Prev 82 0 R /Title (Taking MCMC steps) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 553.0394 0 ] /Next 84 0 R /Parent 81 0 R /Prev 82 0 R /Title (Package Contents) >>
 endobj
 84 0 obj
-<< /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Next 85 0 R /Parent 80 0 R /Prev 83 0 R /Title (MCMC_step and MCMC_step_stub) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 304.2394 0 ] /Next 85 0 R /Parent 81 0 R /Prev 83 0 R /Title (Taking MCMC steps) >>
 endobj
 85 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 630.2394 0 ] /Next 86 0 R /Parent 80 0 R /Prev 84 0 R /Title (MCMC_class) >>
+<< /Dest [ 39 0 R /XYZ 40.01575 151.4394 0 ] /Next 86 0 R /Parent 81 0 R /Prev 84 0 R /Title (MCMC_step_vertex and MCMC_step_stub) >>
 endobj
 86 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 444.6394 0 ] /Next 87 0 R /Parent 80 0 R /Prev 85 0 R /Title (Notes) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 630.2394 0 ] /Next 87 0 R /Parent 81 0 R /Prev 85 0 R /Title (MCMC_class) >>
 endobj
 87 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 309.8394 0 ] /Parent 80 0 R /Prev 86 0 R /Title (References) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 444.6394 0 ] /Next 88 0 R /Parent 81 0 R /Prev 86 0 R /Title (Notes) >>
 endobj
 88 0 obj
-<< /Dest [ 44 0 R /XYZ 40.01575 247.0394 0 ] /Next 89 0 R /Parent 79 0 R /Prev 80 0 R /Title (dbl_edge_mcmc.py) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 309.8394 0 ] /Parent 81 0 R /Prev 87 0 R /Title (References) >>
 endobj
 89 0 obj
-<< /Dest [ 47 0 R /XYZ 40.01575 75.03937 0 ] /Next 90 0 R /Parent 79 0 R /Prev 88 0 R /Title (sample_assortativity.py) >>
+<< /Dest [ 44 0 R /XYZ 40.01575 247.0394 0 ] /Next 90 0 R /Parent 80 0 R /Prev 81 0 R /Title (dbl_edge_mcmc.py) >>
 endobj
 90 0 obj
-<< /Dest [ 49 0 R /XYZ 40.01575 249.0394 0 ] /Parent 79 0 R /Prev 89 0 R /Title (dist_verification.py) >>
+<< /Dest [ 47 0 R /XYZ 40.01575 75.03937 0 ] /Next 91 0 R /Parent 80 0 R /Prev 89 0 R /Title (sample_assortativity.py) >>
 endobj
 91 0 obj
-<< /Dest [ 50 0 R /XYZ 40.01575 351.0394 0 ] /Next 92 0 R /Parent 78 0 R /Prev 79 0 R /Title (Indices) >>
+<< /Dest [ 49 0 R /XYZ 40.01575 249.0394 0 ] /Parent 80 0 R /Prev 90 0 R /Title (dist_verification.py) >>
 endobj
 92 0 obj
-<< /Dest [ 70 0 R /XYZ 40.01575 799.0394 0 ] /Next 93 0 R /Parent 78 0 R /Prev 91 0 R /Title (Index) >>
+<< /Dest [ 50 0 R /XYZ 40.01575 351.0394 0 ] /Next 93 0 R /Parent 79 0 R /Prev 80 0 R /Title (Indices) >>
 endobj
 93 0 obj
-<< /Dest [ 75 0 R /XYZ 40.01575 799.0394 0 ] /Parent 78 0 R /Prev 92 0 R /Title (Python Module Index) >>
+<< /Dest [ 71 0 R /XYZ 40.01575 799.0394 0 ] /Next 94 0 R /Parent 79 0 R /Prev 92 0 R /Title (Index) >>
 endobj
 94 0 obj
-<< /Count 13 /Kids [ 4 0 R 5 0 R 36 0 R 37 0 R 39 0 R 44 0 R 47 0 R 49 0 R 50 0 R 51 0 R 
-  70 0 R 71 0 R 75 0 R ] /Type /Pages >>
+<< /Dest [ 76 0 R /XYZ 40.01575 799.0394 0 ] /Parent 79 0 R /Prev 93 0 R /Title (Python Module Index) >>
 endobj
 95 0 obj
+<< /Count 13 /Kids [ 4 0 R 5 0 R 36 0 R 37 0 R 39 0 R 44 0 R 47 0 R 49 0 R 50 0 R 51 0 R 
+  71 0 R 72 0 R 76 0 R ] /Type /Pages >>
+endobj
+96 0 obj
 << /Length 995 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -3303,7 +3297,7 @@ q
 1 0 0 1 40.01575 524.1606 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2.4 Tm /F1 12 Tf 14.4 TL 213.924 0 Td (August 02, 2016) Tj T* -213.924 0 Td ET
+BT 1 0 0 1 0 2.4 Tm /F1 12 Tf 14.4 TL 213.924 0 Td (August 09, 2016) Tj T* -213.924 0 Td ET
 Q
 Q
 q
@@ -3315,7 +3309,7 @@ Q
  
 endstream
 endobj
-96 0 obj
+97 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -3325,8 +3319,8 @@ Q
  
 endstream
 endobj
-97 0 obj
-<< /Length 4084 >>
+98 0 obj
+<< /Length 4091 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -3418,7 +3412,7 @@ Q
 q
 1 0 0 1 0 165 cm
 q
-BT 1 0 0 1 40 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step and MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 40 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_vertex and MCMC_step_stub) Tj T* ET
 Q
 Q
 q
@@ -3567,7 +3561,7 @@ Q
  
 endstream
 endobj
-98 0 obj
+99 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -3577,8 +3571,8 @@ Q
  
 endstream
 endobj
-99 0 obj
-<< /Length 7940 >>
+100 0 obj
+<< /Length 7960 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -3838,7 +3832,7 @@ q
 1 0 0 1 40.01575 167.4394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL 4.44894 Tw (There are two primary ways to utilize this module, either though providing and maintaining a networkx) Tj T* 0 Tw .100241 Tw (graph/multigraph object as in MCMC_class, or by providing and maintaining an adjacency matrix and an edge list as) Tj T* 0 Tw .592131 Tw (in the functions MCMC_step_stub and MCMC_step. In either approach it is necessary to specify the desired graph) Tj T* 0 Tw 1.145535 Tw (space by stating whether self-loops and/or multiedges are allowed as well deciding whether the graph is stub- or) Tj T* 0 Tw (vertex-labeled.) Tj T* ET
+BT 1 0 0 1 0 50 Tm /F1 10 Tf 12 TL 4.44894 Tw (There are two primary ways to utilize this module, either though providing and maintaining a networkx) Tj T* 0 Tw .100241 Tw (graph/multigraph object as in MCMC_class, or by providing and maintaining an adjacency matrix and an edge list as) Tj T* 0 Tw .335606 Tw (in the functions MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify the desired) Tj T* 0 Tw .164358 Tw (graph space by stating whether self-loops and/or multiedges are allowed as well deciding whether the graph is stub-) Tj T* 0 Tw (or vertex-labeled.) Tj T* ET
 Q
 Q
 q
@@ -3850,14 +3844,14 @@ q
 n -10 0 525.2441 22.8 re B*
 Q
 q
-BT 1 0 0 1 0 2.8 Tm 16.8 TL /F3 14 Tf .12549 .262745 .360784 rg (MCMC_step and MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 0 2.8 Tm 16.8 TL /F3 14 Tf .12549 .262745 .360784 rg (MCMC_step_vertex and MCMC_step_stub) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 80.63937 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 3.230409 Tw (Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and vertex-labeled \(respectively\)) Tj T* 0 Tw .524116 Tw (double edge swap and correspond to Algorithms 1 and 3 in the accompanying paper. These functions modify a full) Tj T* 0 Tw .333705 Tw (\(non-sparse\) graph adjacency matrix, a list of edges, and a length 4 list, all in place. Both take the same arguments) Tj T* 0 Tw (\(as detailed below\). Consider the following example.) Tj T* ET
+BT 1 0 0 1 0 38 Tm /F1 10 Tf 12 TL 6.860455 Tw (Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and vertex-labeled) Tj T* 0 Tw .208381 Tw (\(respectively\) double edge swap and correspond to Algorithms 1 and 3 in the accompanying paper. These functions) Tj T* 0 Tw .025641 Tw (modify a full \(non-sparse\) graph adjacency matrix, a list of edges, and a length 4 list, all in place. Both take the same) Tj T* 0 Tw (arguments \(as detailed below\). Consider the following example.) Tj T* ET
 Q
 Q
 q
@@ -3877,8 +3871,8 @@ Q
  
 endstream
 endobj
-100 0 obj
-<< /Length 14875 >>
+101 0 obj
+<< /Length 14949 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4033,22 +4027,22 @@ n 174 0 30 12 re f*
 .933333 1 .8 rg
 n 204 0 6 12 re f*
 .933333 1 .8 rg
-n 216 0 30 12 re f*
-.933333 1 .8 rg
-n 252 0 6 12 re f*
-.933333 1 .8 rg
-n 264 0 24 12 re f*
+n 216 0 66 12 re f*
 .933333 1 .8 rg
 n 288 0 6 12 re f*
 .933333 1 .8 rg
-n 300 0 30 12 re f*
+n 300 0 24 12 re f*
 .933333 1 .8 rg
-n 336 0 6 12 re f*
+n 324 0 6 12 re f*
 .933333 1 .8 rg
-n 348 0 24 12 re f*
+n 336 0 66 12 re f*
 .933333 1 .8 rg
-n 372 0 6 12 re f*
-BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (numpy) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (np) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (A) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg ( ) Tj 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (edge_list) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (swaps) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg ([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (]) Tj 0 0 0 rg  T* 0 0 0 rg (MCMC_step_stub) Tj 0 0 0 rg (\() Tj 0 0 0 rg (A) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (edge_list) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (swaps) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (\)) Tj T* ET
+n 408 0 6 12 re f*
+.933333 1 .8 rg
+n 420 0 24 12 re f*
+.933333 1 .8 rg
+n 444 0 6 12 re f*
+BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (numpy) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (np) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (A) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg ( ) Tj 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (edge_list) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (np) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (array) Tj 0 0 0 rg (\([[) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (],[) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (]]\)) Tj 0 0 0 rg  T* 0 0 0 rg (swaps) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg ([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (]) Tj 0 0 0 rg  T* 0 0 0 rg (MCMC_step_stub) Tj 0 0 0 rg (\() Tj 0 0 0 rg (A) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (edge_list) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (swaps) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 Q
@@ -4084,7 +4078,7 @@ q
 1 0 0 1 40.01575 571.4394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 1.407888 Tw (The MCMC_class is initialized with a Networkx graph, along with the three choices that define the graph space.) Tj T* 0 Tw .413606 Tw (Calling the class function 'get_graph' advances the Markov chain and returns the current Networkx graph. Consider) Tj T* 0 Tw (the following example.) Tj T* ET
+BT 1 0 0 1 0 26 Tm /F1 10 Tf 12 TL 1.407888 Tw (The MCMC_class is initialized with a Networkx graph, along with the three choices that define the graph space.) Tj T* 0 Tw .163864 Tw (Calling the class function 'step_and_get_graph' advances the Markov chain and returns the current Networkx graph.) Tj T* 0 Tw (Consider the following example.) Tj T* ET
 Q
 Q
 q
@@ -4161,29 +4155,29 @@ n 96 12 6 12 re f*
 .933333 1 .8 rg
 n 102 12 6 12 re f*
 .933333 1 .8 rg
-n 114 12 30 12 re f*
-.933333 1 .8 rg
-n 150 12 6 12 re f*
-.933333 1 .8 rg
-n 162 12 24 12 re f*
+n 114 12 66 12 re f*
 .933333 1 .8 rg
 n 186 12 6 12 re f*
 .933333 1 .8 rg
-n 198 12 30 12 re f*
+n 198 12 24 12 re f*
 .933333 1 .8 rg
-n 234 12 6 12 re f*
+n 222 12 6 12 re f*
 .933333 1 .8 rg
-n 246 12 24 12 re f*
+n 234 12 66 12 re f*
 .933333 1 .8 rg
-n 270 12 6 12 re f*
+n 306 12 6 12 re f*
 .933333 1 .8 rg
-n 282 12 54 12 re f*
+n 318 12 24 12 re f*
 .933333 1 .8 rg
 n 342 12 6 12 re f*
 .933333 1 .8 rg
-n 354 12 30 12 re f*
+n 354 12 72 12 re f*
 .933333 1 .8 rg
-n 384 12 6 12 re f*
+n 432 12 6 12 re f*
+.933333 1 .8 rg
+n 444 12 30 12 re f*
+.933333 1 .8 rg
+n 474 12 6 12 re f*
 .933333 1 .8 rg
 n 0 0 12 12 re f*
 .933333 1 .8 rg
@@ -4193,10 +4187,10 @@ n 30 0 12 12 re f*
 .933333 1 .8 rg
 n 42 0 6 12 re f*
 .933333 1 .8 rg
-n 48 0 54 12 re f*
+n 48 0 108 12 re f*
 .933333 1 .8 rg
-n 102 0 12 12 re f*
-BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (networkx) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (nx) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (G) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (nx) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (Graph) Tj 0 0 0 rg (\(\)) Tj 0 0 0 rg  T* 0 0 0 rg (G) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (add_path) Tj 0 0 0 rg (\([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (3) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (4) Tj /F5 10 Tf 0 0 0 rg (]\)) Tj 0 0 0 rg  T* 0 0 0 rg (MC) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MCMC_class) Tj 0 0 0 rg (\() Tj 0 0 0 rg (G) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (v_labeled) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (False) Tj 0 0 0 rg (\)) Tj 0 0 0 rg  T* 0 0 0 rg (G2) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MC) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (get_graph) Tj 0 0 0 rg (\(\)) Tj T* ET
+n 156 0 12 12 re f*
+BT 1 0 0 1 0 50 Tm 12 TL /F4 10 Tf 0 .501961 0 rg (import) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (networkx) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf 0 .501961 0 rg (as) Tj /F5 10 Tf 0 0 0 rg ( ) Tj /F4 10 Tf .054902 .517647 .709804 rg (nx) Tj /F5 10 Tf 0 0 0 rg  T* 0 0 0 rg (G) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (nx) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (Graph) Tj 0 0 0 rg (\(\)) Tj 0 0 0 rg  T* 0 0 0 rg (G) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (add_path) Tj 0 0 0 rg (\([) Tj /F4 10 Tf 0 0 .815686 rg (0) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (1) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (2) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (3) Tj /F5 10 Tf 0 0 0 rg (,) Tj /F4 10 Tf 0 0 .815686 rg (4) Tj /F5 10 Tf 0 0 0 rg (]\)) Tj 0 0 0 rg  T* 0 0 0 rg (MC) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MCMC_class) Tj 0 0 0 rg (\() Tj 0 0 0 rg (G) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_loops) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (allow_multi) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (True) Tj 0 0 0 rg (,) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (is_v_labeled) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 .439216 .12549 rg (False) Tj 0 0 0 rg (\)) Tj 0 0 0 rg  T* 0 0 0 rg (G2) Tj 0 0 0 rg ( ) Tj .188235 .188235 .188235 rg (=) Tj 0 0 0 rg ( ) Tj 0 0 0 rg (MC) Tj .188235 .188235 .188235 rg (.) Tj 0 0 0 rg (step_and_get_graph) Tj 0 0 0 rg (\(\)) Tj T* ET
 Q
 Q
 Q
@@ -4225,7 +4219,7 @@ q
 1 0 0 1 40.01575 397.8394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 2.357238 Tw (In general, directly calling MCMC_step or MCMC_step_stub is faster than using MCMC_class, since updating) Tj T* 0 Tw (Networkx data structures doesn't benefit from numba acceleration.) Tj T* ET
+BT 1 0 0 1 0 14 Tm /F1 10 Tf 12 TL 3.249508 Tw (In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than using MCMC_class, since) Tj T* 0 Tw (updating Networkx data structures doesn't benefit from numba acceleration.) Tj T* ET
 Q
 Q
 q
@@ -4298,7 +4292,7 @@ Q
 q
 1 0 0 1 40.01575 137.8394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F6 10 Tf 0 0 0 rg (class ) Tj /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_class ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F6 10 Tf 0 0 0 rg (class ) Tj /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_class ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -4328,7 +4322,7 @@ q
 1 0 0 1 50.01575 59.83937 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -4348,22 +4342,22 @@ Q
  
 endstream
 endobj
-101 0 obj
-<< /Length 8776 >>
+102 0 obj
+<< /Length 8849 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
 1 0 0 1 50.01575 775.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 763.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (v_labeled \(bool\): True only if the graph space is vertex-labeled. True by default.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (is_v_labeled \(bool\): True only if the graph space is vertex-labeled. True by default.) Tj T* ET
 Q
 Q
 q
@@ -4402,7 +4396,7 @@ Q
 q
 1 0 0 1 50.01575 685.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (get_graph ) Tj /F2 10 Tf 0 0 0 rg (\(\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (step_and_get_graph ) Tj /F2 10 Tf 0 0 0 rg (\(\)) Tj T* ET
 Q
 Q
 q
@@ -4464,13 +4458,13 @@ Q
 q
 1 0 0 1 40.01575 565.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_stub) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 553.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a vertex-labeled double edge swap.) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a stub-labeled double edge swap.) Tj T* ET
 Q
 Q
 q
@@ -4508,14 +4502,14 @@ q
 1 0 0 1 50.01575 475.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 463.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -4544,7 +4538,7 @@ Q
 q
 1 0 0 1 50.01575 397.0394 cm
 q
-BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 3.170292 Tw (requires removing the ) Tj 0 0 .501961 rg ('@jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
+BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 2.177435 Tw (requires removing the ) Tj 0 0 .501961 rg ('@nb.jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
 Q
 Q
 q
@@ -4553,13 +4547,13 @@ Q
 q
 1 0 0 1 40.01575 373.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_stub) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (MCMC_step_vertex) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 361.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a stub-labeled double edge swap.) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Performs a vertex-labeled double edge swap.) Tj T* ET
 Q
 Q
 q
@@ -4597,14 +4591,14 @@ q
 1 0 0 1 50.01575 283.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 271.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -4633,7 +4627,7 @@ Q
 q
 1 0 0 1 50.01575 205.0394 cm
 q
-BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 2.177435 Tw (requires removing the ) Tj 0 0 .501961 rg ('@nb.jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
+BT 1 0 0 1 0 26 Tm 1.151506 Tw 12 TL /F1 10 Tf 0 0 0 rg (This method currently requires a full adjacency matrix. Adjusting this to work a sparse adjacency matrix simply) Tj T* 0 Tw 3.170292 Tw (requires removing the ) Tj 0 0 .501961 rg ('@jit) Tj 0 0 0 rg (' decorator. This method supports loopy graphs, but depending on the degree) Tj T* 0 Tw (sequence, it may not be able to sample from all loopy graphs.) Tj T* ET
 Q
 Q
 q
@@ -4642,7 +4636,7 @@ Q
 q
 1 0 0 1 40.01575 187.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (flatten_graph ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (graph) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F5 10 Tf 0 0 0 rg (dbl_edge_mcmc.) Tj /F4 10 Tf 0 0 0 rg (flatten_graph ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (graph) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -4672,14 +4666,14 @@ q
 1 0 0 1 50.01575 133.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops are allowed in output graph.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops are allowed in output graph.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 121.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in output graph.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in output graph.) Tj T* ET
 Q
 Q
 q
@@ -4734,8 +4728,8 @@ Q
  
 endstream
 endobj
-102 0 obj
-<< /Length 8660 >>
+103 0 obj
+<< /Length 8687 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -4855,7 +4849,7 @@ Q
 q
 1 0 0 1 40.01575 499.0394 cm
 q
-BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (sample_assortativity.) Tj /F4 10 Tf 0 0 0 rg (r_sample_MCMC ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (v_uniform=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=10000) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (n_recs=100) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (filename='temp') Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (sample_assortativity.) Tj /F4 10 Tf 0 0 0 rg (r_sample_MCMC ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_loops) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (allow_multi) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (its=10000) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (n_recs=100) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (filename='temp') Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -4885,14 +4879,14 @@ q
 1 0 0 1 50.01575 433.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_loops \(bool\): True only if loops allowed in the graph space.) Tj T* ET
 Q
 Q
 q
 1 0 0 1 50.01575 421.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (allow_multi \(bool\): True only if multiedges are allowed in the graph space.) Tj T* ET
 Q
 Q
 q
@@ -5068,8 +5062,8 @@ Q
  
 endstream
 endobj
-103 0 obj
-<< /Length 7019 >>
+104 0 obj
+<< /Length 7011 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -5164,7 +5158,7 @@ Q
 q
 1 0 0 1 40.01575 595.0394 cm
 q
-BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (dist_verification.) Tj /F4 10 Tf 0 0 0 rg (test_sampling ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (self_loops=False) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi_edges=False) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (sample_uniformly=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=100000) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
+BT 1 0 0 1 0 14 Tm 12 TL /F5 10 Tf 0 0 0 rg (dist_verification.) Tj /F4 10 Tf 0 0 0 rg (test_sampling ) Tj /F1 10 Tf 0 0 0 rg (\() Tj /F5 10 Tf 0 0 0 rg (G) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (self_loops=False) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (multi_edges=False) Tj /F1 10 Tf 0 0 0 rg (,) Tj T* /F5 10 Tf 0 0 0 rg (is_v_labeled=True) Tj /F1 10 Tf 0 0 0 rg (, ) Tj /F5 10 Tf 0 0 0 rg (its=100000) Tj /F1 10 Tf 0 0 0 rg (\)) Tj T* ET
 Q
 Q
 q
@@ -5208,7 +5202,7 @@ q
 1 0 0 1 50.01575 517.0394 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (sample_uniformly \(bool\): True if the space is vertex labeled, False for stub-labeled.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (is_v_labeled \(bool\): True if the space is vertex labeled, False for stub-labeled.) Tj T* ET
 Q
 Q
 q
@@ -5387,7 +5381,7 @@ Q
  
 endstream
 endobj
-104 0 obj
+105 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -5397,8 +5391,8 @@ Q
  
 endstream
 endobj
-105 0 obj
-<< /Length 4889 >>
+106 0 obj
+<< /Length 4731 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
 q
@@ -5492,13 +5486,13 @@ n -10 0 256.3496 20.4 re B*
 Q
 q
 .12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (G) Tj T* ET
+BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (L) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 545.4394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (get_graph\(\) \(dbl_edge_mcmc.MCMC_class method\)) Tj  T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (load_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
@@ -5511,48 +5505,29 @@ n -10 0 256.3496 20.4 re B*
 Q
 q
 .12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (L) Tj T* ET
+BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (M) Tj T* ET
 Q
 Q
 q
 1 0 0 1 40.01575 497.0394 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (load_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 466.6394 cm
-q
-.8 .8 .8 RG
-.3 w
-.94902 .94902 .94902 rg
-n -10 0 256.3496 20.4 re B*
-Q
-q
-.12549 .262745 .360784 rg
-BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (M) Tj T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 448.6394 cm
-q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_class \(class in dbl_edge_mcmc\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 430.6394 cm
-q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step \(in module dbl_edge_mcmc\)) Tj  T* ET
-Q
-Q
-q
-1 0 0 1 40.01575 412.6394 cm
+1 0 0 1 40.01575 479.0394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_stub \(in module dbl_edge_mcmc\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 382.2394 cm
+1 0 0 1 40.01575 461.0394 cm
+q
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (MCMC_step_vertex \(in module dbl_edge_mcmc\)) Tj  T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 430.6394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -5565,13 +5540,13 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (P) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 364.2394 cm
+1 0 0 1 40.01575 412.6394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (plot_vals\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 333.8394 cm
+1 0 0 1 40.01575 382.2394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -5584,13 +5559,13 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (R) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 315.8394 cm
+1 0 0 1 40.01575 364.2394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (r_sample_MCMC\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 285.4394 cm
+1 0 0 1 40.01575 333.8394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -5603,19 +5578,25 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (S) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 267.4394 cm
+1 0 0 1 40.01575 315.8394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (sample_assortativity \(module\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 249.4394 cm
+1 0 0 1 40.01575 297.8394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (sample_geometers\(\) \(in module sample_assortativity\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 219.0394 cm
+1 0 0 1 40.01575 267.8394 cm
+q
+BT 1 0 0 1 0 14 Tm 6.269606 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (step_and_get_graph\(\) \(dbl_edge_mcmc.MCMC_class) Tj T* 0 Tw (method\)) Tj  T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 237.4394 cm
 q
 .8 .8 .8 RG
 .3 w
@@ -5628,33 +5609,33 @@ BT 1 0 0 1 0 2.4 Tm /F3 12 Tf 14.4 TL (T) Tj T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 201.0394 cm
+1 0 0 1 40.01575 219.4394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 183.0394 cm
+1 0 0 1 40.01575 201.4394 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling_five_node\(\) \(in module dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 q
 BT 1 0 0 1 0 14 Tm 34.2498 Tw 12 TL /F1 10 Tf 0 0 .501961 rg (test_sampling_seven_node\(\) \(in module) Tj T* 0 Tw (dist_verification\)) Tj  T* ET
 Q
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 Q
 q
-1 0 0 1 40.01575 153.0394 cm
+1 0 0 1 40.01575 171.4394 cm
 Q
  
 endstream
 endobj
-106 0 obj
+107 0 obj
 << /Length 80 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -5664,7 +5645,7 @@ Q
  
 endstream
 endobj
-107 0 obj
+108 0 obj
 << /Length 1056 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -5730,52 +5711,52 @@ Q
  
 endstream
 endobj
-108 0 obj
-<< /Nums [ 0 109 0 R 1 110 0 R 2 111 0 R 3 112 0 R 4 113 0 R 
-  5 114 0 R 6 115 0 R 7 116 0 R 8 117 0 R 9 118 0 R 
-  10 119 0 R 11 120 0 R 12 121 0 R ] >>
-endobj
 109 0 obj
-<< /S /D /St 1 >>
+<< /Nums [ 0 110 0 R 1 111 0 R 2 112 0 R 3 113 0 R 4 114 0 R 
+  5 115 0 R 6 116 0 R 7 117 0 R 8 118 0 R 9 119 0 R 
+  10 120 0 R 11 121 0 R 12 122 0 R ] >>
 endobj
 110 0 obj
-<< /S /D /St 2 >>
-endobj
-111 0 obj
-<< /S /r /St 1 >>
-endobj
-112 0 obj
-<< /S /r /St 2 >>
-endobj
-113 0 obj
 << /S /D /St 1 >>
 endobj
-114 0 obj
+111 0 obj
 << /S /D /St 2 >>
 endobj
+112 0 obj
+<< /S /r /St 1 >>
+endobj
+113 0 obj
+<< /S /r /St 2 >>
+endobj
+114 0 obj
+<< /S /D /St 1 >>
+endobj
 115 0 obj
-<< /S /D /St 3 >>
+<< /S /D /St 2 >>
 endobj
 116 0 obj
-<< /S /D /St 4 >>
+<< /S /D /St 3 >>
 endobj
 117 0 obj
-<< /S /D /St 5 >>
+<< /S /D /St 4 >>
 endobj
 118 0 obj
-<< /S /D /St 6 >>
+<< /S /D /St 5 >>
 endobj
 119 0 obj
-<< /S /D /St 7 >>
+<< /S /D /St 6 >>
 endobj
 120 0 obj
-<< /S /D /St 8 >>
+<< /S /D /St 7 >>
 endobj
 121 0 obj
+<< /S /D /St 8 >>
+endobj
+122 0 obj
 << /S /D /St 9 >>
 endobj
 xref
-0 122
+0 123
 0000000000 65535 f
 0000000075 00000 n
 0000000163 00000 n
@@ -5816,93 +5797,94 @@ xref
 0000006398 00000 n
 0000006608 00000 n
 0000006731 00000 n
-0000006941 00000 n
-0000007055 00000 n
-0000007164 00000 n
-0000007335 00000 n
-0000007454 00000 n
-0000007684 00000 n
-0000007852 00000 n
-0000008023 00000 n
-0000008260 00000 n
-0000008466 00000 n
-0000008696 00000 n
-0000008907 00000 n
-0000009118 00000 n
-0000009290 00000 n
-0000009462 00000 n
-0000009634 00000 n
-0000009806 00000 n
-0000009978 00000 n
-0000010150 00000 n
-0000010322 00000 n
-0000010494 00000 n
-0000010666 00000 n
-0000010838 00000 n
-0000011010 00000 n
-0000011182 00000 n
-0000011354 00000 n
-0000011526 00000 n
-0000011698 00000 n
-0000011870 00000 n
-0000012042 00000 n
-0000012214 00000 n
-0000012567 00000 n
-0000012778 00000 n
-0000012950 00000 n
-0000013122 00000 n
-0000013294 00000 n
-0000013538 00000 n
-0000013648 00000 n
-0000013976 00000 n
-0000014054 00000 n
-0000014227 00000 n
-0000014380 00000 n
-0000014490 00000 n
-0000014624 00000 n
-0000014759 00000 n
-0000014905 00000 n
-0000015033 00000 n
-0000015156 00000 n
-0000015271 00000 n
-0000015405 00000 n
-0000015546 00000 n
-0000015671 00000 n
-0000015796 00000 n
-0000015919 00000 n
-0000016043 00000 n
-0000016194 00000 n
-0000017245 00000 n
-0000017380 00000 n
-0000021521 00000 n
-0000021656 00000 n
-0000029653 00000 n
-0000044587 00000 n
-0000053421 00000 n
-0000062139 00000 n
-0000069216 00000 n
-0000069352 00000 n
-0000074299 00000 n
-0000074435 00000 n
-0000075549 00000 n
-0000075726 00000 n
-0000075764 00000 n
-0000075802 00000 n
-0000075840 00000 n
-0000075878 00000 n
-0000075916 00000 n
-0000075954 00000 n
-0000075992 00000 n
-0000076030 00000 n
-0000076068 00000 n
-0000076106 00000 n
-0000076144 00000 n
-0000076182 00000 n
+0000006942 00000 n
+0000007056 00000 n
+0000007165 00000 n
+0000007336 00000 n
+0000007455 00000 n
+0000007685 00000 n
+0000007856 00000 n
+0000008024 00000 n
+0000008261 00000 n
+0000008467 00000 n
+0000008697 00000 n
+0000008908 00000 n
+0000009119 00000 n
+0000009291 00000 n
+0000009463 00000 n
+0000009635 00000 n
+0000009807 00000 n
+0000009979 00000 n
+0000010151 00000 n
+0000010323 00000 n
+0000010495 00000 n
+0000010667 00000 n
+0000010839 00000 n
+0000011011 00000 n
+0000011183 00000 n
+0000011355 00000 n
+0000011527 00000 n
+0000011699 00000 n
+0000011871 00000 n
+0000012043 00000 n
+0000012215 00000 n
+0000012387 00000 n
+0000012747 00000 n
+0000012958 00000 n
+0000013130 00000 n
+0000013302 00000 n
+0000013474 00000 n
+0000013718 00000 n
+0000013828 00000 n
+0000014156 00000 n
+0000014234 00000 n
+0000014407 00000 n
+0000014560 00000 n
+0000014670 00000 n
+0000014804 00000 n
+0000014939 00000 n
+0000015092 00000 n
+0000015220 00000 n
+0000015343 00000 n
+0000015458 00000 n
+0000015592 00000 n
+0000015733 00000 n
+0000015858 00000 n
+0000015983 00000 n
+0000016106 00000 n
+0000016230 00000 n
+0000016381 00000 n
+0000017432 00000 n
+0000017567 00000 n
+0000021715 00000 n
+0000021850 00000 n
+0000029868 00000 n
+0000044876 00000 n
+0000053783 00000 n
+0000062528 00000 n
+0000069597 00000 n
+0000069733 00000 n
+0000074522 00000 n
+0000074658 00000 n
+0000075772 00000 n
+0000075949 00000 n
+0000075987 00000 n
+0000076025 00000 n
+0000076063 00000 n
+0000076101 00000 n
+0000076139 00000 n
+0000076177 00000 n
+0000076215 00000 n
+0000076253 00000 n
+0000076291 00000 n
+0000076329 00000 n
+0000076367 00000 n
+0000076405 00000 n
 trailer
 << /ID 
  % ReportLab generated PDF document -- digest (http://www.reportlab.com)
  [(-\270/\215\023\374\232\255\017j\310\301DYu\363) (-\270/\215\023\374\232\255\017j\310\301DYu\363)]
- /Info 77 0 R /Root 76 0 R /Size 122 >>
+ /Info 78 0 R /Root 77 0 R /Size 123 >>
 startxref
-76220
+76443
 %%EOF

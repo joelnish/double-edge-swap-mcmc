@@ -53,17 +53,17 @@
 <span class="c1">#There are two primary ways to utilize this module, either though providing and</span>
 <span class="c1">#maintaining a networkx graph/multigraph object as in MCMC_class, or by providing </span>
 <span class="c1">#and maintaining an adjacency matrix and an edge list as in the functions </span>
-<span class="c1">#MCMC_step_stub and MCMC_step. In either approach it is necessary to specify</span>
+<span class="c1">#MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify</span>
 <span class="c1">#the desired graph space by stating whether self-loops and/or multiedges are </span>
 <span class="c1">#allowed as well deciding whether the graph is stub- or vertex-labeled. </span>
 <span class="c1"># </span>
 <span class="c1">#For a list of function arguments please see the function&#39;s specific </span>
 <span class="c1">#documentation.</span>
 <span class="c1">#</span>
-<span class="c1">#MCMC_step and MCMC_step_uniform</span>
+<span class="c1">#MCMC_step_vertex and MCMC_step_stub</span>
 <span class="c1">#-------------------------------</span>
 <span class="c1">#</span>
-<span class="c1">#Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and </span>
+<span class="c1">#Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and </span>
 <span class="c1">#vertex-labeled (respectively) double edge swap and correspond to Algorithms 1 </span>
 <span class="c1">#and 3 in the accompanying paper. These functions modify a full (non-sparse) </span>
 <span class="c1">#graph adjacency matrix, a list of edges, and a length 4 list, all in place. </span>
@@ -77,7 +77,7 @@
 <span class="c1">#  A = np.array([[0,1,0],[1,2,2],[0,2,0 ]])</span>
 <span class="c1">#  edge_list = np.array([[0,1],[1,2],[1,2],[1,1]])</span>
 <span class="c1">#  swaps = [0,0,0,0]</span>
-<span class="c1">#  MCMC_step_stub(A, edge_list, swaps, loops = True, multi = True)</span>
+<span class="c1">#  MCMC_step_stub(A, edge_list, swaps, allow_loops = True, allow_multi = True)</span>
 <span class="c1">#</span>
 <span class="c1">#This performs a single MCMC step on a stub-labeled loopy multigraph, </span>
 <span class="c1">#potentially updating A, edge_list and swap with new, post-swap values. </span>
@@ -91,7 +91,7 @@
 <span class="c1">#----------</span>
 <span class="c1">#</span>
 <span class="c1">#The MCMC_class is initialized with a networkx graph, along with the three choices</span>
-<span class="c1">#that define the graph space.  Calling the class function &#39;get_graph&#39; </span>
+<span class="c1">#that define the graph space.  Calling the class function &#39;step_and_get_graph&#39; </span>
 <span class="c1">#advances the Markov chain and returns the current networkx graph </span>
 <span class="c1">#</span>
 <span class="c1">#    Example:  </span>
@@ -101,8 +101,8 @@
 <span class="c1">#  import networkx as nx</span>
 <span class="c1">#  G = nx.Graph()</span>
 <span class="c1">#  G.add_path([0,1,2,3,4])</span>
-<span class="c1">#  MC = MCMC_class(G, loops = True, multi = True, v_labeled = False)</span>
-<span class="c1">#  G2 = MC.get_graph()</span>
+<span class="c1">#  MC = MCMC_class(G, allow_loops = True, allow_multi = True, is_v_labeled = False)</span>
+<span class="c1">#  G2 = MC.step_and_get_graph()</span>
 <span class="c1">#</span>
 <span class="c1">#This takes a path graph on 4 nodes, instantiates a MCMC_class based on this </span>
 <span class="c1">#graph and returns a pointer to a graph G2 which differs from G by one double</span>
@@ -112,7 +112,7 @@
 <span class="c1">#</span>
 <span class="c1">#Notes</span>
 <span class="c1">#-----</span>
-<span class="c1">#In general, directly calling MCMC_step or MCMC_step_stub is faster than </span>
+<span class="c1">#In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than </span>
 <span class="c1">#using MCMC_class, since updating networkx data structures doesn&#39;t benefit </span>
 <span class="c1">#from numba acceleration.</span>
 <span class="c1">#</span>
@@ -155,7 +155,7 @@
 
 
 <span class="nd">@jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">nogil</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<div class="viewcode-block" id="MCMC_step"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+<div class="viewcode-block" id="MCMC_step_vertex"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step_vertex">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step_vertex</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    </span>
 <span class="sd">    Performs a vertex-labeled double edge swap.</span>
@@ -167,8 +167,8 @@
 <span class="sd">            only once.</span>
 <span class="sd">    |     swaps (length 4 numpy array): Changed inplace, will contain the four</span>
 <span class="sd">            nodes swapped if a swap is accepted.</span>
-<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
-<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    |     allow_loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     allow_multi (bool): True only if multiedges are allowed in the graph space.</span>
 <span class="sd">    </span>
 <span class="sd">    | Returns:</span>
 <span class="sd">    |     bool: True if swap is accepted, False if current graph is resampled. </span>
@@ -203,7 +203,7 @@
     <span class="n">w_vy</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
 
     <span class="c1"># If multiedges are not allowed, resample if swap would replicate an edge</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">multi</span> <span class="ow">and</span> <span class="p">(</span> <span class="n">w_ux</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">w_vy</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_multi</span> <span class="ow">and</span> <span class="p">(</span> <span class="n">w_ux</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">w_vy</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="p">):</span>
         <span class="k">return</span> <span class="bp">False</span>
     
     <span class="n">num_loops</span> <span class="o">=</span> <span class="mi">0</span>
@@ -240,7 +240,7 @@
     <span class="c1"># We now run through the different possible edge swap cases</span>
     <span class="k">if</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">multi</span><span class="p">:</span> <span class="c1"># Swapping two self-loops creates would create a multiedge</span>
+            <span class="k">if</span> <span class="n">allow_multi</span><span class="p">:</span> <span class="c1"># Swapping two self-loops creates would create a multiedge</span>
                 <span class="n">swapsTo</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
                 <span class="n">swapsFrom</span> <span class="o">=</span> <span class="p">((</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
             <span class="k">else</span><span class="p">:</span>
@@ -248,14 +248,14 @@
         <span class="k">elif</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">False</span> <span class="c1"># The only swap on two nodes with 1 self-loop doesn&#39;t change graph</span>
         <span class="k">else</span><span class="p">:</span> <span class="c1"># No_loops on 2 nodes</span>
-            <span class="k">if</span> <span class="n">loops</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">allow_loops</span><span class="p">:</span>
                 <span class="n">swapsTo</span> <span class="o">=</span> <span class="p">(</span><span class="n">w_uv</span><span class="o">*</span><span class="p">(</span><span class="n">w_xy</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span> 
                 <span class="n">swapsFrom</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> 
             <span class="k">else</span><span class="p">:</span> <span class="c1"># Only change would make 2 self-loops</span>
                 <span class="k">return</span> <span class="bp">False</span>
     <span class="k">elif</span> <span class="n">unique_nodes</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">num_loops</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">if</span> <span class="n">loops</span><span class="p">:</span> <span class="c1"># Swapping adjacent edges creates a self-loop</span>
+            <span class="k">if</span> <span class="n">allow_loops</span><span class="p">:</span> <span class="c1"># Swapping adjacent edges creates a self-loop</span>
                 <span class="n">swapsTo</span> <span class="o">=</span> <span class="n">w_uv</span><span class="o">*</span><span class="n">w_xy</span>
                 <span class="n">swapsFrom</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w_ux</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">w_vy</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span> <span class="c1"># Only change would make a self-loop</span>
@@ -304,7 +304,7 @@
         <span class="k">return</span> <span class="bp">False</span></div>
             
 <span class="nd">@jit</span><span class="p">(</span><span class="n">nopython</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span><span class="n">nogil</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<div class="viewcode-block" id="MCMC_step_stub"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step_stub">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step_stub</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+<div class="viewcode-block" id="MCMC_step_stub"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_step_stub">[docs]</a><span class="k">def</span> <span class="nf">MCMC_step_stub</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    </span>
 <span class="sd">    Performs a stub-labeled double edge swap.</span>
@@ -316,8 +316,8 @@
 <span class="sd">            only once.</span>
 <span class="sd">    |     swaps (length 4 numpy array): Changed inplace, will contain the four</span>
 <span class="sd">            nodes swapped if a swap is accepted.</span>
-<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
-<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    |     allow_loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     allow_multi (bool): True only if multiedges are allowed in the graph space.</span>
 <span class="sd">    </span>
 <span class="sd">    | Returns:</span>
 <span class="sd">    |     bool: True if swap is accepted, False if current graph is resampled. </span>
@@ -350,7 +350,7 @@
     <span class="n">w_vy</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">v</span><span class="p">,</span><span class="n">y</span><span class="p">]</span>
 
     <span class="c1"># If multiedges are not allowed, resample if swap would replicate an edge</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">multi</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_multi</span><span class="p">:</span>
         <span class="k">if</span> <span class="p">(</span> <span class="n">w_ux</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="ow">or</span> <span class="n">w_vy</span><span class="o">&gt;=</span><span class="mi">1</span> <span class="p">):</span>
             <span class="k">return</span> <span class="bp">False</span>
             
@@ -358,7 +358,7 @@
             <span class="k">return</span> <span class="bp">False</span>
     
     <span class="c1">#If loops are not allowed then only swaps on 4 distinct nodes are possible</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">loops</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">allow_loops</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">u</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">u</span> <span class="o">==</span> <span class="n">y</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="n">x</span> <span class="ow">or</span> <span class="n">v</span> <span class="o">==</span> <span class="n">y</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">False</span>
     
@@ -398,9 +398,9 @@
 <span class="sd">    | Args:</span>
 <span class="sd">    |     G (networkx_class): This graph initializes the Markov chain. All </span>
 <span class="sd">             sampled graphs will have the same degree sequence as G.</span>
-<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
-<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph space.</span>
-<span class="sd">    |     v_labeled (bool): True only if the graph space is vertex-labeled. </span>
+<span class="sd">    |     allow_loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     allow_multi (bool): True only if multiedges are allowed in the graph space.</span>
+<span class="sd">    |     is_v_labeled (bool): True only if the graph space is vertex-labeled. </span>
 <span class="sd">            True by default.</span>
 <span class="sd">    </span>
 <span class="sd">    | Returns:</span>
@@ -413,13 +413,13 @@
 <span class="sd">    not be able to sample from all loopy graphs.     </span>
 <span class="sd">        </span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">v_labeled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">loops</span> <span class="o">=</span> <span class="n">loops</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">multi</span> <span class="o">=</span> <span class="n">multi</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">uniform</span> <span class="o">=</span> <span class="n">v_labeled</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">uniform</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">MCMC_step</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">G</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">,</span><span class="n">is_v_labeled</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">G</span> <span class="o">=</span> <span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">allow_loops</span> <span class="o">=</span> <span class="n">allow_loops</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">allow_multi</span> <span class="o">=</span> <span class="n">allow_multi</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">is_v_labeled</span> <span class="o">=</span> <span class="n">is_v_labeled</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_v_labeled</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">MCMC_step_vertex</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">step</span> <span class="o">=</span> <span class="n">MCMC_step_stub</span>
         
@@ -431,7 +431,7 @@
         
         
 
-<div class="viewcode-block" id="MCMC_class.get_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_class.get_graph">[docs]</a>    <span class="k">def</span> <span class="nf">get_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    
+<div class="viewcode-block" id="MCMC_class.step_and_get_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.MCMC_class.step_and_get_graph">[docs]</a>    <span class="k">def</span> <span class="nf">step_and_get_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>    
         <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">        </span>
 <span class="sd">        The Markov chains will attempt a double edge swap, after which the next</span>
@@ -449,7 +449,7 @@
 <span class="sd">        this function.</span>
 <span class="sd">            </span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="n">new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_list</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">swaps</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">loops</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">multi</span><span class="p">)</span>
+        <span class="n">new</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">A</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">edge_list</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">swaps</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">allow_loops</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">allow_multi</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">new</span><span class="p">:</span>
 <span class="c1">#            print swaps, new</span>
 <span class="c1">#            print A</span>
@@ -461,7 +461,7 @@
         
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">G</span></div></div>
         
-<div class="viewcode-block" id="flatten_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.flatten_graph">[docs]</a><span class="k">def</span> <span class="nf">flatten_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">):</span>
+<div class="viewcode-block" id="flatten_graph"><a class="viewcode-back" href="../index.html#dbl_edge_mcmc.flatten_graph">[docs]</a><span class="k">def</span> <span class="nf">flatten_graph</span><span class="p">(</span><span class="n">graph</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    </span>
 <span class="sd">    Takes an input graph and returns a version w/ or w/o loops and </span>
@@ -469,8 +469,8 @@
 <span class="sd">    </span>
 <span class="sd">    | Args:</span>
 <span class="sd">    |     G (networkx_class): The original graph.</span>
-<span class="sd">    |     loops (bool): True only if loops are allowed in output graph.</span>
-<span class="sd">    |     multi (bool): True only if multiedges are allowed in output graph.</span>
+<span class="sd">    |     allow_loops (bool): True only if loops are allowed in output graph.</span>
+<span class="sd">    |     allow_multi (bool): True only if multiedges are allowed in output graph.</span>
 <span class="sd">    </span>
 <span class="sd">    | Returns:</span>
 <span class="sd">    |     A graph with or without multiedges and/or self-loops, as specified. </span>
@@ -479,11 +479,11 @@
     
     <span class="n">graph</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">convert_node_labels_to_integers</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>  
     
-    <span class="k">if</span> <span class="n">loops</span> <span class="ow">and</span> <span class="n">multi</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">allow_loops</span> <span class="ow">and</span> <span class="n">allow_multi</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">loops</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">multi</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="n">allow_loops</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">allow_multi</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="ow">not</span> <span class="n">multi</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">loops</span><span class="p">:</span>
+    <span class="k">elif</span> <span class="ow">not</span> <span class="n">allow_multi</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">allow_loops</span><span class="p">:</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">MultiGraph</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>

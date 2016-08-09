@@ -88,7 +88,7 @@ def determine_relative_freq(G):
     return prob
 
 
-def test_sampling(G, self_loops=False, multi_edges=False, sample_uniformly=True, its = 100000): 
+def test_sampling(G, self_loops=False, multi_edges=False, is_v_labeled=True, its = 100000): 
     '''
     
     Tests the uniformity of the MCMC sampling on an input graph.
@@ -99,7 +99,7 @@ def test_sampling(G, self_loops=False, multi_edges=False, sample_uniformly=True,
     |     self_loops (bool): True only if loops allowed in the graph space.
     |     multi_edges (bool): True only if multiedges are allowed in the graph
             space.
-    |     sample_uniformly (bool): True if the space is vertex labeled, False for
+    |     is_v_labeled (bool): True if the space is vertex labeled, False for
             stub-labeled.
     |     its (int): The number of samples from the MCMC sampler.
     
@@ -113,7 +113,7 @@ def test_sampling(G, self_loops=False, multi_edges=False, sample_uniformly=True,
     
     print 'Testing sampling with selfloops= ' + str(self_loops) +' multi_edges= ' +str(multi_edges) 
     
-    config = mcmc.MCMC_class(G,self_loops,multi_edges, sample_uniformly)
+    config = mcmc.MCMC_class(G,self_loops,multi_edges, is_v_labeled)
     visited_graphs = {}
 
     for i in range(0,its):
@@ -123,7 +123,7 @@ def test_sampling(G, self_loops=False, multi_edges=False, sample_uniformly=True,
         except:
             visited_graphs[tuple(config.G.edges())] = [1,  determine_relative_freq(config.G)  ]      
     
-        config.get_graph()
+        config.step_and_get_graph()
               
     print 'number of graphs visited: ' +str(len(visited_graphs))
 
@@ -201,13 +201,13 @@ def test_sampling_seven_node():
 
     samples = 8000000
  
-    for loops in [False,True]:
-        for multi in [False,True]:
+    for allow_loops in [False,True]:
+        for allow_multi in [False,True]:
             for uniform in [False, True]:
                 name = 'SevenNode'  
-                name = name + ['','_w_loops'][loops] + ['','_w_multi'][multi] + ['_stub-labeled','_vertex-labeled'][uniform]
+                name = name + ['','_w_loops'][allow_loops] + ['','_w_multi'][allow_multi] + ['_stub-labeled','_vertex-labeled'][uniform]
         
-                vals = test_sampling(G,loops,multi,its=samples, sample_uniformly = uniform)
+                vals = test_sampling(G,allow_loops,allow_multi,its=samples, is_v_labeled = uniform)
                 plot_vals(vals, uniform, name)
                 
                 
@@ -225,13 +225,13 @@ def test_sampling_five_node():
 
     samples = 200000
  
-    for loops in [False,True]:
-        for multi in [False,True]:
+    for allow_loops in [False,True]:
+        for allow_multi in [False,True]:
             for uniform in [False, True]:
                 name = 'FiveNode'   
-                name = name + ['','_w_loops'][loops] + ['','_w_multi'][multi] + ['_stub-labeled','_vertex-labeled'][uniform]
+                name = name + ['','_w_loops'][allow_loops] + ['','_w_multi'][allow_multi] + ['_stub-labeled','_vertex-labeled'][uniform]
         
-                vals = test_sampling(G,loops,multi,its=samples, sample_uniformly = uniform)
+                vals = test_sampling(G,allow_loops,allow_multi,its=samples, is_v_labeled = uniform)
                 plot_vals(vals, uniform, name)
 
 

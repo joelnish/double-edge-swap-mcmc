@@ -46,15 +46,15 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler. 
 There are two primary ways to utilize this module, either though providing and
 maintaining a networkx graph/multigraph object as in MCMC_class, or by providing 
 and maintaining an adjacency matrix and an edge list as in the functions 
-MCMC_step_stub and MCMC_step. In either approach it is necessary to specify
+MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify
 the desired graph space by stating whether self-loops and/or multiedges are 
 allowed as well deciding whether the graph is stub- or vertex-labeled. 
  
 
-MCMC_step and MCMC_step_stub
+MCMC_step_vertex and MCMC_step_stub
 ****************************
 
-Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and 
+Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and 
 vertex-labeled (respectively) double edge swap and correspond to Algorithms 1 
 and 3 in the accompanying paper. These functions modify a full (non-sparse) 
 graph adjacency matrix, a list of edges, and a length 4 list, all in place. 
@@ -66,7 +66,7 @@ Both take the same arguments (as detailed below). Consider the following example
   A = np.array([[0,1,0],[1,2,2],[0,2,0 ]])
   edge_list = np.array([[0,1],[1,2],[1,2],[1,1]])
   swaps = [0,0,0,0]
-  MCMC_step_stub(A, edge_list, swaps, loops = True, multi = True)
+  MCMC_step_stub(A, edge_list, swaps, allow_loops = True, allow_multi = True)
 
 This performs a single MCMC step on a stub-labeled loopy multigraph, 
 potentially updating A, edge_list and swap with new, post-swap values. 
@@ -80,7 +80,7 @@ MCMC_class
 **********
 
 The MCMC_class is initialized with a Networkx graph, along with the three choices
-that define the graph space.  Calling the class function 'get_graph' 
+that define the graph space.  Calling the class function 'step_and_get_graph' 
 advances the Markov chain and returns the current Networkx graph. Consider the following example. 
 
 ::    
@@ -88,8 +88,8 @@ advances the Markov chain and returns the current Networkx graph. Consider the f
   import networkx as nx
   G = nx.Graph()
   G.add_path([0,1,2,3,4])
-  MC = MCMC_class(G, loops = True, multi = True, v_labeled = False)
-  G2 = MC.get_graph()
+  MC = MCMC_class(G, allow_loops = True, allow_multi = True, is_v_labeled = False)
+  G2 = MC.step_and_get_graph()
 
 This takes a path graph on 4 nodes, instantiates a MCMC_class based on this 
 graph and returns a pointer to a graph G2 which differs from G by one double
@@ -100,7 +100,7 @@ multigraphs, but can be easily adjusted to other spaces.
 Notes
 *****
 
-In general, directly calling MCMC_step or MCMC_step_stub is faster than 
+In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than 
 using MCMC_class, since updating Networkx data structures doesn't benefit 
 from numba acceleration.
 

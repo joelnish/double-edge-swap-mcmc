@@ -63,7 +63,7 @@
 <span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 <span class="kn">import</span> <span class="nn">dbl_edge_mcmc</span> <span class="kn">as</span> <span class="nn">mcmc</span>
 
-<div class="viewcode-block" id="r_sample_MCMC"><a class="viewcode-back" href="../index.html#sample_assortativity.r_sample_MCMC">[docs]</a><span class="k">def</span> <span class="nf">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="n">v_uniform</span> <span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">its</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;temp&#39;</span><span class="p">):</span>
+<div class="viewcode-block" id="r_sample_MCMC"><a class="viewcode-back" href="../index.html#sample_assortativity.r_sample_MCMC">[docs]</a><span class="k">def</span> <span class="nf">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">,</span><span class="n">is_v_labeled</span> <span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">its</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;temp&#39;</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    </span>
 <span class="sd">    Samples the graph assortativity of graphs in a specified graph space  with </span>
@@ -73,8 +73,8 @@
 <span class="sd">    | Args:</span>
 <span class="sd">    |     G (networkx graph or multigraph): Starts the MCMC at graph G. Node </span>
 <span class="sd">            names be the integers 0 to n.            </span>
-<span class="sd">    |     loops (bool): True only if loops allowed in the graph space.</span>
-<span class="sd">    |     multi (bool): True only if multiedges are allowed in the graph</span>
+<span class="sd">    |     allow_loops (bool): True only if loops allowed in the graph space.</span>
+<span class="sd">    |     allow_multi (bool): True only if multiedges are allowed in the graph</span>
 <span class="sd">            space.</span>
 <span class="sd">    |     uniform (bool): True if the space is vertex labeled, False for</span>
 <span class="sd">            stub-labeled.</span>
@@ -89,7 +89,7 @@
 <span class="sd">        </span>
 <span class="sd">    &#39;&#39;&#39;</span>  
     
-    <span class="n">G</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
+    <span class="n">G</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">flatten_graph</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">)</span>
     <span class="n">A</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">adjacency_matrix</span><span class="p">(</span><span class="n">G</span><span class="p">)</span> 
     <span class="n">A</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
     <span class="n">A</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">A</span><span class="p">))</span> <span class="c1">#the row sums should sum to degree</span>
@@ -97,8 +97,8 @@
     <span class="n">swaps</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
     <span class="n">degree</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="o">.</span><span class="n">degree</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">G</span><span class="o">.</span><span class="n">number_of_nodes</span><span class="p">())]</span>
     
-    <span class="k">if</span> <span class="n">v_uniform</span><span class="p">:</span>
-        <span class="n">stepper</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_step</span>
+    <span class="k">if</span> <span class="n">is_v_labeled</span><span class="p">:</span>
+        <span class="n">stepper</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_step_vertex</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">stepper</span> <span class="o">=</span> <span class="n">mcmc</span><span class="o">.</span><span class="n">MCMC_step_stub</span>
 
@@ -110,12 +110,12 @@
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_recs</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">int</span><span class="p">(</span><span class="n">inner_loop_size</span><span class="p">)):</span>
             
-            <span class="n">stepper</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">)</span>
+            <span class="n">stepper</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">edge_list</span><span class="p">,</span><span class="n">swaps</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">)</span>
         
         <span class="n">r_samples</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">calc_r</span><span class="p">(</span><span class="n">degree</span><span class="p">,</span><span class="n">edge_list</span><span class="p">)</span>
 
                 
-    <span class="n">data_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wloops&#39;</span><span class="p">][</span><span class="n">loops</span><span class="p">]</span> <span class="o">+</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wmulti&#39;</span><span class="p">][</span><span class="n">multi</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;_stubUniform&#39;</span><span class="p">,</span><span class="s1">&#39;_vertexUniform&#39;</span><span class="p">][</span><span class="n">v_uniform</span><span class="p">]</span>   
+    <span class="n">data_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wloops&#39;</span><span class="p">][</span><span class="n">allow_loops</span><span class="p">]</span> <span class="o">+</span><span class="p">[</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;_wmulti&#39;</span><span class="p">][</span><span class="n">allow_multi</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;_stub&#39;</span><span class="p">,</span><span class="s1">&#39;_vertex&#39;</span><span class="p">][</span><span class="n">is_v_labeled</span><span class="p">]</span>   
     <span class="n">filename</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="n">data_suffix</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">file</span><span class="p">(</span><span class="s1">&#39;output/&#39;</span><span class="o">+</span><span class="n">filename</span><span class="o">+</span><span class="s1">&#39;.txt&#39;</span><span class="p">,</span><span class="s1">&#39;w&#39;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">r_samples</span><span class="p">))</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -214,9 +214,9 @@
 <span class="sd">    &#39;&#39;&#39;</span>
     
     <span class="n">G</span> <span class="o">=</span> <span class="n">load_geometers</span><span class="p">()</span> 
-    <span class="k">for</span> <span class="n">loops</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
-        <span class="k">for</span> <span class="n">multi</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
-            <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">loops</span><span class="p">,</span><span class="n">multi</span><span class="p">,</span><span class="bp">False</span><span class="p">,</span><span class="n">its</span> <span class="o">=</span> <span class="mi">5000000000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
+    <span class="k">for</span> <span class="n">allow_loops</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
+        <span class="k">for</span> <span class="n">allow_multi</span> <span class="ow">in</span> <span class="p">[</span><span class="bp">True</span><span class="p">,</span><span class="bp">False</span><span class="p">]:</span>
+            <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span><span class="n">allow_loops</span><span class="p">,</span><span class="n">allow_multi</span><span class="p">,</span><span class="bp">False</span><span class="p">,</span><span class="n">its</span> <span class="o">=</span> <span class="mi">5000000000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>
                           <span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;geo&#39;</span><span class="p">)</span></div>
     
     
@@ -227,7 +227,7 @@
     <span class="kn">import</span> <span class="nn">pylab</span> <span class="kn">as</span> <span class="nn">py</span>
     
     <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">karate_club_graph</span><span class="p">()</span>
-    <span class="n">r_vals</span> <span class="o">=</span> <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">loops</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">multi</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">v_uniform</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
+    <span class="n">r_vals</span> <span class="o">=</span> <span class="n">r_sample_MCMC</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">allow_loops</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">allow_multi</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span> <span class="n">is_v_labeled</span> <span class="o">=</span> <span class="bp">False</span><span class="p">,</span>
                   <span class="n">its</span> <span class="o">=</span> <span class="mi">5000000</span><span class="p">,</span> <span class="n">n_recs</span> <span class="o">=</span> <span class="mi">50000</span><span class="p">,</span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;karate&#39;</span><span class="p">)</span>
     
     <span class="n">py</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">r_vals</span><span class="p">,</span><span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span><span class="p">)</span>

@@ -77,13 +77,13 @@ fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler. 
 <p>There are two primary ways to utilize this module, either though providing and
 maintaining a networkx graph/multigraph object as in MCMC_class, or by providing
 and maintaining an adjacency matrix and an edge list as in the functions
-MCMC_step_stub and MCMC_step. In either approach it is necessary to specify
+MCMC_step_stub and MCMC_step_vertex. In either approach it is necessary to specify
 the desired graph space by stating whether self-loops and/or multiedges are
 allowed as well deciding whether the graph is stub- or vertex-labeled.</p>
 </div>
-<div class="section" id="mcmc-step-and-mcmc-step-stub">
-<h3>MCMC_step and MCMC_step_stub<a class="headerlink" href="#mcmc-step-and-mcmc-step-stub" title="Permalink to this headline">¶</a></h3>
-<p>Functions MCMC_step_stub and MCMC_step perform a single stub-labeled and
+<div class="section" id="mcmc-step-vertex-and-mcmc-step-stub">
+<h3>MCMC_step_vertex and MCMC_step_stub<a class="headerlink" href="#mcmc-step-vertex-and-mcmc-step-stub" title="Permalink to this headline">¶</a></h3>
+<p>Functions MCMC_step_stub and MCMC_step_vertex perform a single stub-labeled and
 vertex-labeled (respectively) double edge swap and correspond to Algorithms 1
 and 3 in the accompanying paper. These functions modify a full (non-sparse)
 graph adjacency matrix, a list of edges, and a length 4 list, all in place.
@@ -92,7 +92,7 @@ Both take the same arguments (as detailed below). Consider the following example
 <span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span> <span class="p">]])</span>
 <span class="n">edge_list</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
 <span class="n">swaps</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">MCMC_step_stub</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">edge_list</span><span class="p">,</span> <span class="n">swaps</span><span class="p">,</span> <span class="n">loops</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">multi</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">MCMC_step_stub</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">edge_list</span><span class="p">,</span> <span class="n">swaps</span><span class="p">,</span> <span class="n">allow_loops</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">allow_multi</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This performs a single MCMC step on a stub-labeled loopy multigraph,
@@ -105,13 +105,13 @@ storing the nodes that were swapped.</p>
 <div class="section" id="mcmc-class">
 <h3>MCMC_class<a class="headerlink" href="#mcmc-class" title="Permalink to this headline">¶</a></h3>
 <p>The MCMC_class is initialized with a Networkx graph, along with the three choices
-that define the graph space.  Calling the class function &#8216;get_graph&#8217;
+that define the graph space.  Calling the class function &#8216;step_and_get_graph&#8217;
 advances the Markov chain and returns the current Networkx graph. Consider the following example.</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
 <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="n">G</span><span class="o">.</span><span class="n">add_path</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
-<span class="n">MC</span> <span class="o">=</span> <span class="n">MCMC_class</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">loops</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">multi</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">v_labeled</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
-<span class="n">G2</span> <span class="o">=</span> <span class="n">MC</span><span class="o">.</span><span class="n">get_graph</span><span class="p">()</span>
+<span class="n">MC</span> <span class="o">=</span> <span class="n">MCMC_class</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">allow_loops</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">allow_multi</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span> <span class="n">is_v_labeled</span> <span class="o">=</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">G2</span> <span class="o">=</span> <span class="n">MC</span><span class="o">.</span><span class="n">step_and_get_graph</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This takes a path graph on 4 nodes, instantiates a MCMC_class based on this
@@ -121,7 +121,7 @@ multigraphs, but can be easily adjusted to other spaces.</p>
 </div>
 <div class="section" id="notes">
 <h3>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
-<p>In general, directly calling MCMC_step or MCMC_step_stub is faster than
+<p>In general, directly calling MCMC_step_vertex or MCMC_step_stub is faster than
 using MCMC_class, since updating Networkx data structures doesn&#8217;t benefit
 from numba acceleration.</p>
 <p>For large graphs, the full adjacency matrix may not be able to be stored
@@ -144,7 +144,7 @@ an adjacency matrix, not 1 as in Networkx.</p>
 fixed degree sequences via a double edge swap Markov chain Monte Carlo sampler.</p>
 <dl class="class">
 <dt id="dbl_edge_mcmc.MCMC_class">
-<em class="property">class </em><code class="descclassname">dbl_edge_mcmc.</code><code class="descname">MCMC_class</code><span class="sig-paren">(</span><em>G</em>, <em>loops</em>, <em>multi</em>, <em>v_labeled=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_class" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">dbl_edge_mcmc.</code><code class="descname">MCMC_class</code><span class="sig-paren">(</span><em>G</em>, <em>allow_loops</em>, <em>allow_multi</em>, <em>is_v_labeled=True</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_class" title="Permalink to this definition">¶</a></dt>
 <dd><p>MCMC_class stores the objects necessary for MCMC steps. This
 implementation maintains a networkx version of the graph, though at some
 cost in speed.</p>
@@ -153,9 +153,9 @@ cost in speed.</p>
 <div class="line-block">
 <div class="line">G (networkx_class): This graph initializes the Markov chain. All 
 sampled graphs will have the same degree sequence as G.</div>
-<div class="line">loops (bool): True only if loops allowed in the graph space.</div>
-<div class="line">multi (bool): True only if multiedges are allowed in the graph space.</div>
-<div class="line">v_labeled (bool): True only if the graph space is vertex-labeled. 
+<div class="line">allow_loops (bool): True only if loops allowed in the graph space.</div>
+<div class="line">allow_multi (bool): True only if multiedges are allowed in the graph space.</div>
+<div class="line">is_v_labeled (bool): True only if the graph space is vertex-labeled. 
 True by default.</div>
 </div>
 </div>
@@ -169,8 +169,8 @@ True by default.</div>
 class supports loopy graphs, but depending on the degree sequence, it may 
 not be able to sample from all loopy graphs.</p>
 <dl class="method">
-<dt id="dbl_edge_mcmc.MCMC_class.get_graph">
-<code class="descname">get_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_class.get_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_class.get_graph" title="Permalink to this definition">¶</a></dt>
+<dt id="dbl_edge_mcmc.MCMC_class.step_and_get_graph">
+<code class="descname">step_and_get_graph</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_class.step_and_get_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_class.step_and_get_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>The Markov chains will attempt a double edge swap, after which the next
 graph/multigraph in the chain is returned.</p>
 <div class="line-block">
@@ -192,35 +192,6 @@ this function.</p>
 </dd></dl>
 
 <dl class="attribute">
-<dt id="dbl_edge_mcmc.MCMC_step">
-<code class="descclassname">dbl_edge_mcmc.</code><code class="descname">MCMC_step</code><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_step"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_step" title="Permalink to this definition">¶</a></dt>
-<dd><p>Performs a vertex-labeled double edge swap.</p>
-<div class="line-block">
-<div class="line">Args:</div>
-<div class="line-block">
-<div class="line">A (nxn numpy array): The adjacency matrix. Will be changed inplace.</div>
-<div class="line">edge_list (nx2 numpy array): List of edges in A. Node names should be 
-the integers 0 to n-1. Will be changed inplace. Edges must appear
-only once.</div>
-<div class="line">swaps (length 4 numpy array): Changed inplace, will contain the four
-nodes swapped if a swap is accepted.</div>
-<div class="line">loops (bool): True only if loops allowed in the graph space.</div>
-<div class="line">multi (bool): True only if multiedges are allowed in the graph space.</div>
-</div>
-</div>
-<div class="line-block">
-<div class="line">Returns:</div>
-<div class="line-block">
-<div class="line">bool: True if swap is accepted, False if current graph is resampled. </div>
-</div>
-</div>
-<p>This method currently requires a full adjacency matrix. Adjusting this 
-to work a sparse adjacency matrix simply requires removing the <a class="reference external" href="mailto:'&#37;&#52;&#48;jit">'<span>&#64;</span>jit</a>&#8216;
-decorator.  This method supports loopy graphs, but depending on the degree
-sequence, it may not be able to sample from all loopy graphs.</p>
-</dd></dl>
-
-<dl class="attribute">
 <dt id="dbl_edge_mcmc.MCMC_step_stub">
 <code class="descclassname">dbl_edge_mcmc.</code><code class="descname">MCMC_step_stub</code><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_step_stub"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_step_stub" title="Permalink to this definition">¶</a></dt>
 <dd><p>Performs a stub-labeled double edge swap.</p>
@@ -233,8 +204,8 @@ the integers 0 to n-1. Will be changed inplace. Edges must appear
 only once.</div>
 <div class="line">swaps (length 4 numpy array): Changed inplace, will contain the four
 nodes swapped if a swap is accepted.</div>
-<div class="line">loops (bool): True only if loops allowed in the graph space.</div>
-<div class="line">multi (bool): True only if multiedges are allowed in the graph space.</div>
+<div class="line">allow_loops (bool): True only if loops allowed in the graph space.</div>
+<div class="line">allow_multi (bool): True only if multiedges are allowed in the graph space.</div>
 </div>
 </div>
 <div class="line-block">
@@ -249,17 +220,46 @@ decorator. This method supports loopy graphs, but depending on the degree
 sequence, it may not be able to sample from all loopy graphs.</p>
 </dd></dl>
 
+<dl class="attribute">
+<dt id="dbl_edge_mcmc.MCMC_step_vertex">
+<code class="descclassname">dbl_edge_mcmc.</code><code class="descname">MCMC_step_vertex</code><a class="reference internal" href="_modules/dbl_edge_mcmc.html#MCMC_step_vertex"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.MCMC_step_vertex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a vertex-labeled double edge swap.</p>
+<div class="line-block">
+<div class="line">Args:</div>
+<div class="line-block">
+<div class="line">A (nxn numpy array): The adjacency matrix. Will be changed inplace.</div>
+<div class="line">edge_list (nx2 numpy array): List of edges in A. Node names should be 
+the integers 0 to n-1. Will be changed inplace. Edges must appear
+only once.</div>
+<div class="line">swaps (length 4 numpy array): Changed inplace, will contain the four
+nodes swapped if a swap is accepted.</div>
+<div class="line">allow_loops (bool): True only if loops allowed in the graph space.</div>
+<div class="line">allow_multi (bool): True only if multiedges are allowed in the graph space.</div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">Returns:</div>
+<div class="line-block">
+<div class="line">bool: True if swap is accepted, False if current graph is resampled. </div>
+</div>
+</div>
+<p>This method currently requires a full adjacency matrix. Adjusting this 
+to work a sparse adjacency matrix simply requires removing the <a class="reference external" href="mailto:'&#37;&#52;&#48;jit">'<span>&#64;</span>jit</a>&#8216;
+decorator.  This method supports loopy graphs, but depending on the degree
+sequence, it may not be able to sample from all loopy graphs.</p>
+</dd></dl>
+
 <dl class="function">
 <dt id="dbl_edge_mcmc.flatten_graph">
-<code class="descclassname">dbl_edge_mcmc.</code><code class="descname">flatten_graph</code><span class="sig-paren">(</span><em>graph</em>, <em>loops</em>, <em>multi</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#flatten_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.flatten_graph" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">dbl_edge_mcmc.</code><code class="descname">flatten_graph</code><span class="sig-paren">(</span><em>graph</em>, <em>allow_loops</em>, <em>allow_multi</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dbl_edge_mcmc.html#flatten_graph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dbl_edge_mcmc.flatten_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Takes an input graph and returns a version w/ or w/o loops and 
 multiedges.</p>
 <div class="line-block">
 <div class="line">Args:</div>
 <div class="line-block">
 <div class="line">G (networkx_class): The original graph.</div>
-<div class="line">loops (bool): True only if loops are allowed in output graph.</div>
-<div class="line">multi (bool): True only if multiedges are allowed in output graph.</div>
+<div class="line">allow_loops (bool): True only if loops are allowed in output graph.</div>
+<div class="line">allow_multi (bool): True only if multiedges are allowed in output graph.</div>
 </div>
 </div>
 <div class="line-block">
@@ -310,7 +310,7 @@ MCMC sampling of a collaboration network of geometers.</p>
 
 <dl class="function">
 <dt id="sample_assortativity.r_sample_MCMC">
-<code class="descclassname">sample_assortativity.</code><code class="descname">r_sample_MCMC</code><span class="sig-paren">(</span><em>G</em>, <em>loops</em>, <em>multi</em>, <em>v_uniform=True</em>, <em>its=10000</em>, <em>n_recs=100</em>, <em>filename='temp'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_assortativity.html#r_sample_MCMC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_assortativity.r_sample_MCMC" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">sample_assortativity.</code><code class="descname">r_sample_MCMC</code><span class="sig-paren">(</span><em>G</em>, <em>allow_loops</em>, <em>allow_multi</em>, <em>is_v_labeled=True</em>, <em>its=10000</em>, <em>n_recs=100</em>, <em>filename='temp'</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/sample_assortativity.html#r_sample_MCMC"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#sample_assortativity.r_sample_MCMC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Samples the graph assortativity of graphs in a specified graph space  with 
 the same degree sequence as the input graph. Output is saved in 
 subdirectory &#8216;output/&#8217;.</p>
@@ -319,8 +319,8 @@ subdirectory &#8216;output/&#8217;.</p>
 <div class="line-block">
 <div class="line">G (networkx graph or multigraph): Starts the MCMC at graph G. Node 
 names be the integers 0 to n.            </div>
-<div class="line">loops (bool): True only if loops allowed in the graph space.</div>
-<div class="line">multi (bool): True only if multiedges are allowed in the graph
+<div class="line">allow_loops (bool): True only if loops allowed in the graph space.</div>
+<div class="line">allow_multi (bool): True only if multiedges are allowed in the graph
 space.</div>
 <div class="line">uniform (bool): True if the space is vertex labeled, False for
 stub-labeled.</div>
@@ -409,7 +409,7 @@ stub-labeled.</div>
 
 <dl class="function">
 <dt id="dist_verification.test_sampling">
-<code class="descclassname">dist_verification.</code><code class="descname">test_sampling</code><span class="sig-paren">(</span><em>G</em>, <em>self_loops=False</em>, <em>multi_edges=False</em>, <em>sample_uniformly=True</em>, <em>its=100000</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dist_verification.html#test_sampling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dist_verification.test_sampling" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">dist_verification.</code><code class="descname">test_sampling</code><span class="sig-paren">(</span><em>G</em>, <em>self_loops=False</em>, <em>multi_edges=False</em>, <em>is_v_labeled=True</em>, <em>its=100000</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/dist_verification.html#test_sampling"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#dist_verification.test_sampling" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tests the uniformity of the MCMC sampling on an input graph.</p>
 <div class="line-block">
 <div class="line">Args:</div>
@@ -419,7 +419,7 @@ edges swap method.</div>
 <div class="line">self_loops (bool): True only if loops allowed in the graph space.</div>
 <div class="line">multi_edges (bool): True only if multiedges are allowed in the graph
 space.</div>
-<div class="line">sample_uniformly (bool): True if the space is vertex labeled, False for
+<div class="line">is_v_labeled (bool): True if the space is vertex labeled, False for
 stub-labeled.</div>
 <div class="line">its (int): The number of samples from the MCMC sampler.</div>
 </div>
@@ -475,7 +475,7 @@ beginning in &#8216;SevenNode&#8217;.</p>
 <li><a class="reference internal" href="#about">About</a></li>
 <li><a class="reference internal" href="#package-contents">Package Contents</a></li>
 <li><a class="reference internal" href="#taking-mcmc-steps">Taking MCMC steps</a></li>
-<li><a class="reference internal" href="#mcmc-step-and-mcmc-step-stub">MCMC_step and MCMC_step_stub</a></li>
+<li><a class="reference internal" href="#mcmc-step-vertex-and-mcmc-step-stub">MCMC_step_vertex and MCMC_step_stub</a></li>
 <li><a class="reference internal" href="#mcmc-class">MCMC_class</a></li>
 <li><a class="reference internal" href="#notes">Notes</a></li>
 <li><a class="reference internal" href="#references">References</a></li>
