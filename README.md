@@ -11,7 +11,7 @@ For a fixed degree sequence and a given graph space, a configuration model is a 
 
 ## How to Cite
 
-If this code is utilized in work contributing to a academic publication please cite the associated paper [1].
+If this code is utilized in work contributing to an academic publication please cite the associated paper [1].
 
 ## Included
 
